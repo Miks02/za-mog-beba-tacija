@@ -8,7 +8,7 @@ type PageHeaderProps = {
 
 export function PageHeader({ backTo, right }: PageHeaderProps): React.JSX.Element {
   return (
-    <header className="flex animate-rise items-center justify-between gap-4 motion-reduce:animate-none">
+    <header className="flex animate-rise items-center justify-between gap-4 motion-reduce:animate-fade-in">
       <BackLink to={backTo} />
       {right}
     </header>

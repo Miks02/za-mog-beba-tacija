@@ -1,0 +1,9 @@
+export const HEADER_DELAY_S = 0
+export const EYEBROW_DELAY_S = 0.15
+export const GREETING_DELAY_S = 0.3
+export const NAME_DELAY_S = 0.5
+export const LINE_DELAY_S = 0.7
+export const COUNTER_DELAY_S = 0.85
+export const TILES_DELAY_S = 1
+export const TILE_DELAY_STEP_S = 0.08
+export const NOW_TICK_MS = 1000

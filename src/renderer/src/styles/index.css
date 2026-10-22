@@ -6,3 +6,5 @@
 @import './theme.css';
 @import './base.css';
 @import './animations/shared.css';
+@import './animations/splash.css';
+@import './animations/home.css';

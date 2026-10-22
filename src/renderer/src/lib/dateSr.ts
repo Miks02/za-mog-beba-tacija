@@ -56,7 +56,7 @@ export function formatDayMonthGenitive(date: Date): string {
 }
 
 export function formatSinceLabel(date: Date): string {
-  return `${formatDayMonthGenitive(date)} ${date.getFullYear()}. u ${formatClock(date)}`
+  return `${formatDayMonthGenitive(date)} ${date.getFullYear()}.`
 }
 
 export function formatDottedDate(date: Date): string {
