@@ -19,7 +19,7 @@ export const openWhenNotes = [
   {
     id: 'need-smile',
     label: 'ti treba osmeh',
-    message: 'Seti se kako smo se smejali bez razloga. Sad se smeješ, zar ne?'
+    message: 'Seti se mojih nenormalnih faca.'
   },
   {
     id: 'doubt',
