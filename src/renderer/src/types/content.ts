@@ -1,3 +1,5 @@
+import type { DayPeriod } from '@renderer/lib/greeting'
+
 export type AppConfig = {
   herName: string
   signature: string
@@ -11,6 +13,7 @@ export type AppConfig = {
     homeLine: string
     skyLine: string
   }
+  greetings: Record<DayPeriod, string>
 }
 
 export type Reason = {

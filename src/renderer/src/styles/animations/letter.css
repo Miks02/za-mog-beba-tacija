@@ -1,0 +1,63 @@
+@theme {
+  --animate-letter-float: letter-float 5s ease-in-out infinite;
+  --animate-letter-flap-open: letter-flap-open 0.85s cubic-bezier(0.6, 0.05, 0.3, 1) both;
+  --animate-letter-line: letter-line 0.9s var(--ease-soft-out) both;
+  --animate-letter-seal: letter-seal 2.2s ease-in-out infinite;
+
+  --shadow-envelope: 0 34px 90px color-mix(in oklab, var(--color-black) 50%, transparent);
+  --shadow-letter:
+    0 40px 100px color-mix(in oklab, var(--color-black) 55%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--color-lilac) 40%, transparent);
+
+  @keyframes letter-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(1deg);
+    }
+  }
+
+  @keyframes letter-flap-open {
+    from {
+      transform: rotateX(0deg);
+    }
+    to {
+      transform: rotateX(178deg);
+    }
+  }
+
+  @keyframes letter-line {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes letter-seal {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+}
+
+.letter-pocket {
+  clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
+}
+
+.letter-flap {
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: 50% 0;
+  backface-visibility: visible;
+}

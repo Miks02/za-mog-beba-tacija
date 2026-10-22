@@ -1,0 +1,44 @@
+@theme {
+  --animate-reasons-swap: reasons-swap 0.9s var(--ease-soft-out) both;
+  --animate-reasons-burst: reasons-burst 1.6s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  --animate-reasons-pulse: reasons-pulse 5s ease-in-out infinite;
+
+  @keyframes reasons-swap {
+    from {
+      opacity: 0;
+      transform: translateY(26px) scale(0.97);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes reasons-burst {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.3);
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0, -220px) scale(1.1) rotate(18deg);
+    }
+  }
+
+  @keyframes reasons-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.14;
+    }
+    50% {
+      transform: scale(1.06);
+      opacity: 0.24;
+    }
+  }
+}

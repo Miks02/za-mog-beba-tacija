@@ -1,19 +1,19 @@
 import { describe, expect, it } from 'vitest'
-import { greetingForHour } from './greeting'
+import { dayPeriodForHour } from './greeting'
 
-describe('greetingForHour', () => {
+describe('dayPeriodForHour', () => {
   it.each([
-    [0, 'Laku noć'],
-    [4, 'Laku noć'],
-    [5, 'Dobro jutro'],
-    [11, 'Dobro jutro'],
-    [12, 'Dobar dan'],
-    [17, 'Dobar dan'],
-    [18, 'Dobro veče'],
-    [21, 'Dobro veče'],
-    [22, 'Laku noć'],
-    [23, 'Laku noć']
-  ])('hour %i greets with %s', (hour, greeting) => {
-    expect(greetingForHour(hour)).toBe(greeting)
+    [0, 'night'],
+    [4, 'night'],
+    [5, 'morning'],
+    [11, 'morning'],
+    [12, 'afternoon'],
+    [17, 'afternoon'],
+    [18, 'evening'],
+    [21, 'evening'],
+    [22, 'night'],
+    [23, 'night']
+  ])('hour %i is %s', (hour, period) => {
+    expect(dayPeriodForHour(hour)).toBe(period)
   })
 })

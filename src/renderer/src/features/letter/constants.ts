@@ -1,0 +1,17 @@
+export const ENVELOPE_FADE_DELAY_S = 0.85
+export const ENVELOPE_FADE_DURATION_S = 0.7
+export const ENVELOPE_SWAP_MS = (ENVELOPE_FADE_DELAY_S + ENVELOPE_FADE_DURATION_S) * 1000
+export const LETTER_ENTER_DELAY_S = 1.05
+export const LETTER_ENTER_DURATION_S = 1.2
+export const LETTER_TILT_DEG = -0.6
+export const SALUTATION_DELAY_S = 1.8
+export const FIRST_PARAGRAPH_DELAY_S = 2.1
+export const PARAGRAPH_STEP_S = 0.3
+export const SIGN_OFF_GAP_S = 0.4
+export const CLOSE_BUTTON_GAP_S = 0.3
+export const SEAL_RING_SCALE = 1.37
+export const SEAL_PULSE_DURATION_S = 2.2
+export const REDUCED_MOTION_DELAY_S = 0
+
+export const easeEnvelopeOut = [0.5, 0, 0.75, 0] as const
+export const easeLetterIn = [0.2, 0.8, 0.2, 1] as const

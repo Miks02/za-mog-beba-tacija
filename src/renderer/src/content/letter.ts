@@ -1,18 +1,18 @@
 import type { Letter } from '@renderer/types/content'
 
 export const letter = {
-  salutation: 'Draga moja Beba Tacije,',
+  salutation: 'Moj mali Beba Tacije,',
   paragraphs: [
     {
       id: 'opening',
       tone: 'plain',
-      text: '[Ovde ide tvoje pismo — ono što želiš da pročita kad prvi put upali svoj novi laptop.]'
+      text: 'Moja srećo, od kako smo zajedno moj život se promenio za 180 stepeni na bolje. Svakim danom me činiš sve srećnijim. Tvoj osmeh je nešto što mi nedostaje svakog trenutka kada nisam sa tobom. Jedva čekam da te zaprosim i da živimo zajedno i da se nikad ne odvajamo jedno od drugog.'
     },
     {
       id: 'memories',
       tone: 'aside',
-      text: '[Kako ste se upoznali, šta ti znači, šta te nasmeje kad pomisliš na nju.]'
+      text: 'Reči ne mogu da opišu koliko te volim!'
     }
   ],
-  signOff: 'Zauvek tvoj,'
+  signOff: 'Za moju ljubav,'
 } as const satisfies Letter

@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import { config } from '@renderer/content/config'
 import { formatWeekdayDate } from '@renderer/lib/dateSr'
-import { greetingForHour } from '@renderer/lib/greeting'
+import { dayPeriodForHour } from '@renderer/lib/greeting'
 import { EYEBROW_DELAY_S, GREETING_DELAY_S, LINE_DELAY_S, NAME_DELAY_S } from '../constants'
 
 const RISE_CLASS_NAME =
@@ -28,7 +28,7 @@ export function Greeting({ now }: GreetingProps): React.JSX.Element {
             className={`${RISE_CLASS_NAME} font-display text-[clamp(38px,4.2vw,62px)] leading-[1.05] font-light text-lavender italic`}
             style={delayStyle(GREETING_DELAY_S)}
           >
-            {greetingForHour(now.getHours())},
+            {config.greetings[dayPeriodForHour(now.getHours())]}
           </span>
           <span
             className={`${RISE_CLASS_NAME} font-display text-[clamp(38px,4.2vw,62px)] leading-[1.05] font-light text-lavender italic`}

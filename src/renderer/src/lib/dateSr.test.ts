@@ -36,7 +36,7 @@ describe('dateSr', () => {
 
   it('formats the relationship start labels', () => {
     expect(formatDayMonthGenitive(start)).toBe('9. juna')
-    expect(formatSinceLabel(start)).toBe('9. juna 2025. u 01:00')
+    expect(formatSinceLabel(start)).toBe('9. juna 2025.')
     expect(formatDottedDate(start)).toBe('9 · 6 · 2025')
   })
 

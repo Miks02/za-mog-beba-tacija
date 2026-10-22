@@ -7,15 +7,15 @@ description: Change personal content such as texts, reasons, letter, notes, time
 
 Content lives only in `src/renderer/src/content/` and `src/renderer/src/assets/`. A content change should not touch components.
 
-| What                                                       | Where                                                  |
-| ---------------------------------------------------------- | ------------------------------------------------------ |
-| Names, signature, relationship start date, splash duration | `content/config.ts`                                    |
-| Reasons                                                    | `content/reasons.ts`                                   |
-| Letter paragraphs                                          | `content/letter.ts`                                    |
-| Open-when labels and messages                              | `content/openWhen.ts`                                  |
-| Timeline milestones                                        | `content/timeline.ts`                                  |
-| Photos and captions                                        | `content/photos.ts` plus files in `assets/photos/`     |
-| Music                                                      | `assets/music/` and the import in the audio controller |
+| What                                                                                                 | Where                                                  |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Names, signature, relationship start date, splash duration, greetings by time of day, short messages | `content/config.ts`                                    |
+| Reasons                                                                                              | `content/reasons.ts`                                   |
+| Letter paragraphs                                                                                    | `content/letter.ts`                                    |
+| Open-when labels and messages                                                                        | `content/openWhen.ts`                                  |
+| Timeline milestones                                                                                  | `content/timeline.ts`                                  |
+| Photos and captions                                                                                  | `content/photos.ts` plus files in `assets/photos/`     |
+| Music                                                                                                | `assets/music/` and the import in the audio controller |
 
 Steps:
 
