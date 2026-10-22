@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<title>Učitavanje — Beba Tacije</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#120A1F}
+a{color:#D9C2FF}a:hover{color:#F3E8FF}
+@keyframes bt-draw{to{stroke-dashoffset:0}}
+@keyframes bt-grow{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes bt-bloom{0%{transform:scale(0) rotate(-70deg);opacity:0}55%{opacity:1}100%{transform:scale(1) rotate(0deg);opacity:1}}
+@keyframes bt-sway{from{transform:rotate(-1.8deg)}to{transform:rotate(1.8deg)}}
+@keyframes bt-fall-l{0%{transform:translate3d(0,-8vh,0) rotate(0deg);opacity:0}10%{opacity:.9}85%{opacity:.75}100%{transform:translate3d(-90px,112vh,0) rotate(-520deg);opacity:0}}
+@keyframes bt-fall-r{0%{transform:translate3d(0,-8vh,0) rotate(0deg);opacity:0}10%{opacity:.9}85%{opacity:.75}100%{transform:translate3d(110px,112vh,0) rotate(560deg);opacity:0}}
+@keyframes bt-twinkle{0%,100%{opacity:.12;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
+@keyframes bt-reveal{from{opacity:0;filter:blur(16px);transform:translateY(22px);letter-spacing:.08em}to{opacity:1;filter:blur(0);transform:none;letter-spacing:0}}
+@keyframes bt-fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes bt-beat{0%,100%{transform:scale(1)}14%{transform:scale(1.28)}28%{transform:scale(1)}42%{transform:scale(1.16)}56%{transform:scale(1)}}
+@keyframes bt-drift{from{transform:translate(0,0) scale(1)}to{transform:translate(5vw,4vh) scale(1.12)}}
+.bt-stem{stroke-dasharray:600;stroke-dashoffset:600;animation:bt-draw 1.7s cubic-bezier(.55,.1,.3,1) both}
+.bt-leaf{transform-box:fill-box;transform-origin:0% 80%;animation:bt-grow .9s cubic-bezier(.34,1.45,.64,1) both}
+.bt-bloom{transform-box:fill-box;transform-origin:50% 50%;animation:bt-bloom 1.25s cubic-bezier(.34,1.45,.64,1) both}
+.bt-bud{transform-box:fill-box;transform-origin:50% 100%;animation:bt-grow 1.1s cubic-bezier(.34,1.6,.64,1) both}
+.bt-sway{transform-box:view-box;transform-origin:0 0;animation:bt-sway 5.5s ease-in-out infinite alternate}
+.bt-petal{position:absolute;top:-40px;border-radius:70% 0 70% 0;background:linear-gradient(135deg,#F3E8FF,#C9A7FF);box-shadow:0 0 12px rgba(201,167,255,.45);animation-timing-function:linear;animation-iteration-count:infinite;animation-fill-mode:both}
+.bt-fall-l{animation-name:bt-fall-l}
+.bt-fall-r{animation-name:bt-fall-r}
+.bt-spark{position:absolute;border-radius:50%;background:#F3E8FF;box-shadow:0 0 10px 2px rgba(232,180,240,.7);animation:bt-twinkle 3.2s ease-in-out infinite both}
+.bt-name{background:linear-gradient(110deg,#F3E8FF 30%,#FFFFFF 42%,#E8B4F0 50%,#C9A7FF 56%,#F3E8FF 68%);background-size:260% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bt-reveal 1.8s .35s cubic-bezier(.2,.7,.2,1) both,bt-shimmer 5.5s 2.4s linear infinite}
+@keyframes bt-shimmer{from{background-position:100% 0}to{background-position:-160% 0}}
+.bt-namewrap{filter:drop-shadow(0 0 30px rgba(167,123,255,.55))}
+.bt-flyer{position:absolute;left:0;top:0;offset-rotate:auto 90deg;animation:bt-fly linear infinite both}
+.bt-fly1{offset-path:path('M-80 640 C 260 420, 480 760, 740 470 S 1160 230, 1540 360');animation-duration:15s;animation-delay:3s}
+.bt-fly2{offset-path:path('M1540 560 C 1200 700, 1000 380, 760 300 S 300 160, -80 260');animation-duration:18s;animation-delay:6s}
+.bt-fly3{offset-path:path('M300 980 C 380 700, 120 520, 420 360 S 900 120, 1100 -80');animation-duration:20s;animation-delay:9.5s}
+@keyframes bt-fly{0%{offset-distance:0%;opacity:0}6%{opacity:1}94%{opacity:1}100%{offset-distance:100%;opacity:0}}
+.bt-bfly{position:relative;width:34px;height:26px;perspective:120px}
+.bt-wing{position:absolute;top:0;width:17px;height:24px;border-radius:70% 30% 60% 40%;background:radial-gradient(circle at 40% 35%,#F3E8FF,#C9A7FF 45%,#8B5CF6 100%);box-shadow:0 0 12px rgba(201,167,255,.7)}
+.bt-wl{left:0;transform-origin:100% 50%;animation:bt-flap-l .22s ease-in-out infinite alternate}
+.bt-wr{right:0;border-radius:30% 70% 40% 60%;transform-origin:0% 50%;animation:bt-flap-r .22s ease-in-out infinite alternate}
+.bt-body{position:absolute;left:50%;top:3px;width:3px;height:20px;margin-left:-1.5px;border-radius:2px;background:#2A1247}
+@keyframes bt-flap-l{from{transform:rotateY(0deg)}to{transform:rotateY(68deg)}}
+@keyframes bt-flap-r{from{transform:rotateY(0deg)}to{transform:rotateY(-68deg)}}
+.bt-ray{position:absolute;left:50%;top:50%;width:0;height:0}
+.bt-ray-in{position:absolute;left:-9px;top:-9px;width:18px;height:18px;animation:bt-ray-near 1.6s cubic-bezier(.15,.7,.3,1) both}
+.bt-ray-far{animation-name:bt-ray-far}
+@keyframes bt-ray-near{0%{transform:translateY(0) scale(.2);opacity:0}15%{opacity:1}100%{transform:translateY(-170px) scale(1);opacity:0}}
+@keyframes bt-ray-far{0%{transform:translateY(0) scale(.2);opacity:0}15%{opacity:1}100%{transform:translateY(-270px) scale(1.2);opacity:0}}
+.bt-ring{position:absolute;left:50%;top:50%;width:200px;height:200px;margin:-100px 0 0 -100px;border-radius:50%;border:2px solid rgba(232,180,240,.7);animation:bt-ring 1.6s cubic-bezier(.2,.7,.3,1) both}
+@keyframes bt-ring{from{transform:scale(.2);opacity:1}to{transform:scale(3.2);opacity:0}}
+.bt-fade{animation:bt-fade 1s cubic-bezier(.2,.7,.2,1) both}
+.bt-beat{transform-box:fill-box;transform-origin:50% 50%;animation:bt-beat 1.6s ease-in-out infinite}
+.bt-glow{animation:bt-drift 16s ease-in-out infinite alternate}
+@media (prefers-reduced-motion: reduce){.bt-petal,.bt-glow,.bt-sway{animation:none}}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100vh; min-height: 620px; overflow: hidden; background: #120A1F; color: #F3E8FF; font-family: 'Manrope', system-ui, sans-serif;">
+
+  <div class="bt-glow" aria-hidden="true" style="position: absolute; width: 62vw; height: 62vw; left: -20vw; top: -30vw; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,0.42), rgba(139,92,246,0) 65%);"></div>
+  <div class="bt-glow" aria-hidden="true" style="position: absolute; width: 56vw; height: 56vw; right: -18vw; bottom: -26vw; border-radius: 50%; background: radial-gradient(circle, rgba(229,155,234,0.26), rgba(229,155,234,0) 65%); animation-delay: -6s;"></div>
+
+  <div aria-hidden="true" style="position: absolute; inset: 0;">
+    <sc-for list="{{sparks}}" as="s" hint-placeholder-count="16">
+      <div class="bt-spark" style="position: absolute; {{s.style}}"></div>
+    </sc-for>
+  </div>
+
+  <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none;">
+    <sc-for list="{{petals}}" as="p" hint-placeholder-count="14">
+      <div class="{{p.cls}}" style="position: absolute; {{p.style}}"></div>
+    </sc-for>
+  </div>
+
+  <svg aria-hidden="true" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 46vh; filter: drop-shadow(0 0 16px rgba(167,123,255,0.35));">
+    <!-- leva grupa -->
+    <g transform="translate(50 405)"><g class="bt-sway" style="animation-delay: -1s;">
+      <path class="bt-stem" d="M0 0 C10 -56 -10 -112 6 -160" fill="none" stroke="#6B53A3" stroke-width="2.5" stroke-linecap="round" style="animation-delay: 1.1s;"/>
+      <g transform="translate(6 -160) scale(0.75)"><g class="bt-bud" fill="#E8B4F0" style="animation-delay: 2.6s;">
+        <path d="M0 0 C-15 -3 -18 -26 -12 -40 L-6 -30 L0 -44 L6 -30 L12 -40 C18 -26 15 -3 0 0Z"/>
+        <path d="M0 -4 C-6 -8 -6 -26 0 -40 C6 -26 6 -8 0 -4Z" fill="#FFFFFF" fill-opacity="0.3"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(110 405)"><g class="bt-sway" style="animation-delay: -2.5s;">
+      <path class="bt-stem" d="M0 0 C10 -88 -10 -175 -8 -250" fill="none" stroke="#6B53A3" stroke-width="3" stroke-linecap="round" style="animation-delay: 0.2s;"/>
+      <g transform="translate(2 -110) rotate(-25)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#7E62B8" style="animation-delay: 1s;"/></g>
+      <g transform="translate(-8 -250)"><g class="bt-bloom" fill="#C9A7FF" style="animation-delay: 1.6s;">
+        <ellipse cx="0" cy="-17" rx="7" ry="17"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(45)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(90)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(135)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(180)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(225)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(270)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(315)"/>
+        <circle r="7" fill="#FFE3A3"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(190 405)"><g class="bt-sway" style="animation-delay: -0.5s;">
+      <path class="bt-stem" d="M0 0 C10 -116 -10 -231 10 -330" fill="none" stroke="#6B53A3" stroke-width="3" stroke-linecap="round" style="animation-delay: 0.45s;"/>
+      <g transform="translate(3 -140) rotate(-30)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#7E62B8" style="animation-delay: 1.2s;"/></g>
+      <g transform="translate(-2 -200) scale(-1 1) rotate(-25)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#8D71C6" style="animation-delay: 1.35s;"/></g>
+      <g transform="translate(10 -330)"><g class="bt-bud" fill="#A77BFF" style="animation-delay: 1.95s;">
+        <path d="M0 0 C-15 -3 -18 -26 -12 -40 L-6 -30 L0 -44 L6 -30 L12 -40 C18 -26 15 -3 0 0Z"/>
+        <path d="M0 -4 C-6 -8 -6 -26 0 -40 C6 -26 6 -8 0 -4Z" fill="#FFFFFF" fill-opacity="0.28"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(270 405)"><g class="bt-sway" style="animation-delay: -3.2s;">
+      <path class="bt-stem" d="M0 0 C10 -72 -10 -144 6 -205" fill="none" stroke="#6B53A3" stroke-width="2.5" stroke-linecap="round" style="animation-delay: 0.7s;"/>
+      <g transform="translate(-1 -90) scale(-1 1) rotate(-25)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#7E62B8" style="animation-delay: 1.4s;"/></g>
+      <g transform="translate(6 -205)"><g class="bt-bloom" fill="#E8B4F0" style="animation-delay: 2.2s;">
+        <ellipse cx="0" cy="-14" rx="6" ry="14"/><ellipse cx="0" cy="-14" rx="6" ry="14" transform="rotate(45)"/><ellipse cx="0" cy="-14" rx="6" ry="14" transform="rotate(90)"/><ellipse cx="0" cy="-14" rx="6" ry="14" transform="rotate(135)"/><ellipse cx="0" cy="-14" rx="6" ry="14" transform="rotate(180)"/><ellipse cx="0" cy="-14" rx="6" ry="14" transform="rotate(225)"/><ellipse cx="0" cy="-14" rx="6" ry="14" transform="rotate(270)"/><ellipse cx="0" cy="-14" rx="6" ry="14" transform="rotate(315)"/>
+        <circle r="5.5" fill="#FFE3A3"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(355 405)"><g class="bt-sway" style="animation-delay: -4s;">
+      <path class="bt-stem" d="M0 0 C10 -102 -10 -203 -12 -290" fill="none" stroke="#6B53A3" stroke-width="3" stroke-linecap="round" style="animation-delay: 0.9s;"/>
+      <g transform="translate(2 -120) rotate(-25)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#7E62B8" style="animation-delay: 1.6s;"/></g>
+      <g transform="translate(-4 -180) scale(-1 1) rotate(-20)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#8D71C6" style="animation-delay: 1.75s;"/></g>
+      <g transform="translate(-12 -290)"><g class="bt-bloom" fill="#F3E8FF" style="animation-delay: 2.4s;">
+        <ellipse cx="0" cy="-22" rx="9.5" ry="22"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(45)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(90)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(135)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(180)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(225)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(270)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(315)"/>
+        <circle r="9" fill="#FFE3A3"/>
+      </g></g>
+    </g></g>
+
+    <!-- sredina: tihi izdanci -->
+    <g transform="translate(480 405)"><g class="bt-sway" style="animation-delay: -1.7s;">
+      <path class="bt-stem" d="M0 0 C4 -20 -4 -40 3 -62" fill="none" stroke="#4E3B78" stroke-width="2" stroke-linecap="round" style="animation-delay: 1.3s;"/>
+      <g transform="translate(3 -62)"><circle class="bt-bloom" r="4.5" fill="#C9A7FF" style="animation-delay: 2.5s;"/></g>
+    </g></g>
+    <g transform="translate(575 405)"><g class="bt-sway" style="animation-delay: -2.9s;">
+      <path class="bt-stem" d="M0 0 C-4 -26 4 -52 -3 -84" fill="none" stroke="#4E3B78" stroke-width="2" stroke-linecap="round" style="animation-delay: 1.5s;"/>
+      <g transform="translate(-3 -84)"><circle class="bt-bloom" r="5" fill="#E8B4F0" style="animation-delay: 2.7s;"/></g>
+    </g></g>
+    <g transform="translate(870 405)"><g class="bt-sway" style="animation-delay: -0.8s;">
+      <path class="bt-stem" d="M0 0 C4 -24 -4 -48 4 -74" fill="none" stroke="#4E3B78" stroke-width="2" stroke-linecap="round" style="animation-delay: 1.4s;"/>
+      <g transform="translate(4 -74)"><circle class="bt-bloom" r="4.5" fill="#E8B4F0" style="animation-delay: 2.6s;"/></g>
+    </g></g>
+    <g transform="translate(965 405)"><g class="bt-sway" style="animation-delay: -3.6s;">
+      <path class="bt-stem" d="M0 0 C-4 -18 4 -36 -2 -56" fill="none" stroke="#4E3B78" stroke-width="2" stroke-linecap="round" style="animation-delay: 1.6s;"/>
+      <g transform="translate(-2 -56)"><circle class="bt-bloom" r="4" fill="#C9A7FF" style="animation-delay: 2.8s;"/></g>
+    </g></g>
+
+    <!-- desna grupa -->
+    <g transform="translate(1085 405)"><g class="bt-sway" style="animation-delay: -2.2s;">
+      <path class="bt-stem" d="M0 0 C-10 -100 10 -200 12 -285" fill="none" stroke="#6B53A3" stroke-width="3" stroke-linecap="round" style="animation-delay: 1s;"/>
+      <g transform="translate(-2 -120) scale(-1 1) rotate(-25)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#7E62B8" style="animation-delay: 1.7s;"/></g>
+      <g transform="translate(12 -285)"><g class="bt-bloom" fill="#A77BFF" style="animation-delay: 2.5s;">
+        <ellipse cx="0" cy="-16" rx="7" ry="16"/><ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(45)"/><ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(90)"/><ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(135)"/><ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(180)"/><ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(225)"/><ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(270)"/><ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(315)"/>
+        <circle r="6.5" fill="#FFE3A3"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(1170 405)"><g class="bt-sway" style="animation-delay: -4.4s;">
+      <path class="bt-stem" d="M0 0 C-10 -75 10 -150 -6 -215" fill="none" stroke="#6B53A3" stroke-width="2.5" stroke-linecap="round" style="animation-delay: 0.8s;"/>
+      <g transform="translate(1 -95) rotate(-25)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#8D71C6" style="animation-delay: 1.5s;"/></g>
+      <g transform="translate(-6 -215)"><g class="bt-bud" fill="#E8B4F0" style="animation-delay: 2.3s;">
+        <path d="M0 0 C-15 -3 -18 -26 -12 -40 L-6 -30 L0 -44 L6 -30 L12 -40 C18 -26 15 -3 0 0Z"/>
+        <path d="M0 -4 C-6 -8 -6 -26 0 -40 C6 -26 6 -8 0 -4Z" fill="#FFFFFF" fill-opacity="0.3"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(1250 405)"><g class="bt-sway" style="animation-delay: -1.2s;">
+      <path class="bt-stem" d="M0 0 C-10 -117 10 -235 -10 -335" fill="none" stroke="#6B53A3" stroke-width="3" stroke-linecap="round" style="animation-delay: 0.55s;"/>
+      <g transform="translate(-3 -140) scale(-1 1) rotate(-28)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#7E62B8" style="animation-delay: 1.3s;"/></g>
+      <g transform="translate(2 -210) rotate(-22)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#8D71C6" style="animation-delay: 1.45s;"/></g>
+      <g transform="translate(-10 -335)"><g class="bt-bloom" fill="#C9A7FF" style="animation-delay: 2.05s;">
+        <ellipse cx="0" cy="-22" rx="9.5" ry="22"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(45)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(90)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(135)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(180)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(225)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(270)"/><ellipse cx="0" cy="-22" rx="9.5" ry="22" transform="rotate(315)"/>
+        <circle r="9" fill="#FFE3A3"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(1330 405)"><g class="bt-sway" style="animation-delay: -3s;">
+      <path class="bt-stem" d="M0 0 C-10 -89 10 -179 8 -255" fill="none" stroke="#6B53A3" stroke-width="3" stroke-linecap="round" style="animation-delay: 0.3s;"/>
+      <g transform="translate(-2 -110) scale(-1 1) rotate(-25)"><path class="bt-leaf" d="M0 0 C10 -16 28 -18 40 -12 C28 -2 12 4 0 0Z" fill="#7E62B8" style="animation-delay: 1.1s;"/></g>
+      <g transform="translate(8 -255)"><g class="bt-bloom" fill="#E8B4F0" style="animation-delay: 1.75s;">
+        <ellipse cx="0" cy="-17" rx="7" ry="17"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(45)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(90)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(135)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(180)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(225)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(270)"/><ellipse cx="0" cy="-17" rx="7" ry="17" transform="rotate(315)"/>
+        <circle r="7" fill="#FFE3A3"/>
+      </g></g>
+    </g></g>
+
+    <g transform="translate(1395 405)"><g class="bt-sway" style="animation-delay: -0.3s;">
+      <path class="bt-stem" d="M0 0 C-10 -58 10 -115 -6 -165" fill="none" stroke="#6B53A3" stroke-width="2.5" stroke-linecap="round" style="animation-delay: 1.2s;"/>
+      <g transform="translate(-6 -165) scale(0.75)"><g class="bt-bud" fill="#C9A7FF" style="animation-delay: 2.7s;">
+        <path d="M0 0 C-15 -3 -18 -26 -12 -40 L-6 -30 L0 -44 L6 -30 L12 -40 C18 -26 15 -3 0 0Z"/>
+        <path d="M0 -4 C-6 -8 -6 -26 0 -40 C6 -26 6 -8 0 -4Z" fill="#FFFFFF" fill-opacity="0.3"/>
+      </g></g>
+    </g></g>
+  </svg>
+
+  <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden;">
+    <div class="bt-flyer bt-fly1"><div class="bt-bfly"><span class="bt-wing bt-wl"></span><span class="bt-wing bt-wr"></span><span class="bt-body"></span></div></div>
+    <div class="bt-flyer bt-fly2"><div class="bt-bfly" style="transform: scale(0.75);"><span class="bt-wing bt-wl"></span><span class="bt-wing bt-wr"></span><span class="bt-body"></span></div></div>
+    <div class="bt-flyer bt-fly3"><div class="bt-bfly" style="transform: scale(0.6);"><span class="bt-wing bt-wl"></span><span class="bt-wing bt-wr"></span><span class="bt-body"></span></div></div>
+  </div>
+
+  <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 0 24px 20vh; box-sizing: border-box; text-align: center;">
+    <div class="bt-fade" style="display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: 0.14em; color: #CDBFEA; animation-delay: 0.1s;">
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"><path d="M12 21s-6.7-4.35-9.33-8.36C.9 9.9 2.2 6 5.8 5.2 8 4.7 10.2 5.7 12 7.6c1.8-1.9 4-2.9 6.2-2.4 3.6.8 4.9 4.7 3.13 7.44C18.7 16.65 12 21 12 21z" fill="#E8B4F0"/></svg>
+      <span>za mog beba tacija</span>
+    </div>
+
+    <div class="bt-namewrap" style="position: relative;">
+      <sc-if value="{{done}}" hint-placeholder-val="{{ false }}">
+        <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none;">
+          <div class="bt-ring"></div>
+          <div class="bt-ring" style="animation-delay: 0.25s;"></div>
+          <sc-for list="{{rays}}" as="r" hint-placeholder-count="14">
+            <div class="bt-ray" style="transform: rotate({{r.angle}});">
+              <svg class="{{r.cls}}" viewBox="0 0 24 24" style="animation-delay: {{r.delay}};"><path d="M12 21s-6.7-4.35-9.33-8.36C.9 9.9 2.2 6 5.8 5.2 8 4.7 10.2 5.7 12 7.6c1.8-1.9 4-2.9 6.2-2.4 3.6.8 4.9 4.7 3.13 7.44C18.7 16.65 12 21 12 21z" fill="{{r.color}}"/></svg>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <h1 class="bt-name" style="position: relative; margin: 0; padding: 0 0.14em; font-family: 'Great Vibes', 'Brush Script MT', cursive; font-weight: 400; font-size: clamp(84px, 11vw, 172px); line-height: 1.15;">Volim Te</h1>
+    </div>
+
+    <div class="bt-fade" style="width: min(440px, 82vw); display: flex; flex-direction: column; gap: 14px; animation-delay: 1s;">
+      <div role="progressbar" aria-label="Učitavanje" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{pct}}" style="position: relative; height: 6px; border-radius: 999px; background: rgba(243,232,255,0.1);">
+        <div style="height: 100%; width: {{barWidth}}; border-radius: 999px; background: linear-gradient(90deg, #8B5CF6, #C9A7FF 60%, #E59BEA); box-shadow: 0 0 18px rgba(201,167,255,0.7);"></div>
+        <div style="position: absolute; top: 50%; left: {{barWidth}}; width: 22px; height: 22px; margin: -11px 0 0 -11px;">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" style="display: block; filter: drop-shadow(0 0 8px rgba(232,180,240,0.9));"><path class="bt-beat" d="M12 21s-6.7-4.35-9.33-8.36C.9 9.9 2.2 6 5.8 5.2 8 4.7 10.2 5.7 12 7.6c1.8-1.9 4-2.9 6.2-2.4 3.6.8 4.9 4.7 3.13 7.44C18.7 16.65 12 21 12 21z" fill="#F3E8FF"/></svg>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-size: 14px; color: #CDBFEA;">
+        <span>{{status}}</span>
+        <span style="font-variant-numeric: tabular-nums; font-weight: 600; color: #F3E8FF;">{{pct}}%</span>
+      </div>
+    </div>
+
+    <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+      <sc-if value="{{done}}" hint-placeholder-val="{{ false }}">
+        <a href="Home.dc.html" class="bt-fade" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 28px; border-radius: 999px; background: #F3E8FF; color: #2A1247; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 12px 44px rgba(167,123,255,0.5);">
+          <span>Uđi u svoj svet</span>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A1247" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"loadSeconds":{"editor":"range","min":3,"max":12,"step":0.5,"unit":"s","default":6},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.start = Date.now();
+    this.timer = setInterval(() => {
+      const total = (Number(this.props.loadSeconds) || 6) * 1000;
+      const t = Math.min(1, (Date.now() - this.start) / total);
+      const eased = 1 - Math.pow(1 - t, 2.2);
+      this.setState({ pct: Math.round(eased * 100) });
+      if (t >= 1) { clearInterval(this.timer); this.timer = null; }
+    }, 60);
+  }
+  componentWillUnmount() {
+    if (this.timer) clearInterval(this.timer);
+  }
+  renderVals() {
+    const pct = (this.state && this.state.pct) || 0;
+    const msgs = ['Zalivam cveće…', 'Skupljam latice…', 'Pakujem zagrljaje…', 'Palim zvezdice…', 'Spremno je, ljubavi.'];
+    const idx = pct >= 100 ? 4 : Math.min(3, Math.floor(pct / 25));
+    const petalSeed = [
+      [6, 14, 13, 0.6, 'l'], [14, 10, 11, 3.4, 'r'], [22, 16, 15, 1.8, 'r'], [31, 11, 12, 5.2, 'l'],
+      [39, 13, 14, 0.9, 'r'], [47, 9, 10, 6.8, 'l'], [55, 15, 16, 2.6, 'r'], [63, 10, 12, 4.1, 'l'],
+      [71, 14, 13, 1.2, 'r'], [79, 11, 11, 7.4, 'l'], [86, 16, 15, 3.0, 'l'], [93, 10, 12, 5.8, 'r'],
+      [27, 8, 9, 8.6, 'r'], [68, 8, 10, 9.4, 'l']
+    ];
+    const petals = petalSeed.map((p) => ({
+      cls: 'bt-petal bt-fall-' + p[4],
+      style: 'left: ' + p[0] + '%; width: ' + p[1] + 'px; height: ' + Math.round(p[1] * 0.72) + 'px; animation-duration: ' + p[2] + 's; animation-delay: ' + p[3] + 's;'
+    }));
+    const sparkSeed = [
+      [12, 18, 0.2, 3], [8, 44, 1.4, 2], [16, 72, 0.8, 3], [24, 88, 2.1, 2], [30, 8, 2.8, 2], [6, 60, 1.9, 2],
+      [36, 28, 0.5, 2], [20, 34, 2.4, 3], [28, 58, 1.1, 2], [42, 92, 1.7, 3], [10, 94, 0.3, 2], [40, 4, 2.2, 3],
+      [48, 16, 1.0, 2], [46, 80, 2.6, 2], [4, 26, 1.5, 3], [34, 68, 0.7, 2]
+    ];
+    const sparks = sparkSeed.map((s) => ({
+      style: 'top: ' + s[0] + '%; left: ' + s[1] + '%; width: ' + s[3] + 'px; height: ' + s[3] + 'px; animation-delay: ' + s[2] + 's;'
+    }));
+    return {
+      pct,
+      barWidth: pct + '%',
+      status: msgs[idx],
+      done: pct >= 100,
+      petals,
+      sparks,
+      rays: Array.from({ length: 14 }, (_, k) => ({
+        angle: (k * 360 / 14) + 'deg',
+        cls: k % 2 ? 'bt-ray-in bt-ray-far' : 'bt-ray-in',
+        delay: ((k % 3) * 0.06) + 's',
+        color: ['#F3E8FF', '#E8B4F0', '#C9A7FF'][k % 3]
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

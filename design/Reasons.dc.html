@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<title>Zašto te volim — Beba Tacije</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#120A1F}
+a{color:#D9C2FF}a:hover{color:#F3E8FF}
+@keyframes bt-rise{from{opacity:0;transform:translateY(22px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes bt-in-a{from{opacity:0;transform:translateY(26px) scale(.97);filter:blur(10px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes bt-in-b{from{opacity:0;transform:translateY(26px) scale(.97);filter:blur(10px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes bt-burst-a{0%{opacity:0;transform:translate(0,0) scale(.3)}20%{opacity:1}100%{opacity:0;transform:translate(var(--x,0),-220px) scale(1.1) rotate(18deg)}}
+@keyframes bt-burst-b{0%{opacity:0;transform:translate(0,0) scale(.3)}20%{opacity:1}100%{opacity:0;transform:translate(var(--x,0),-220px) scale(1.1) rotate(18deg)}}
+@keyframes bt-pulse{0%,100%{transform:scale(1);opacity:.14}50%{transform:scale(1.06);opacity:.24}}
+@keyframes bt-drift{from{transform:translate(0,0) scale(1)}to{transform:translate(5vw,4vh) scale(1.12)}}
+.bt-rise{animation:bt-rise 1s cubic-bezier(.2,.7,.2,1) both}
+.bt-swap-a{animation:bt-in-a .9s cubic-bezier(.2,.7,.2,1) both}
+.bt-swap-b{animation:bt-in-b .9s cubic-bezier(.2,.7,.2,1) both}
+.bt-heart{position:absolute;left:50%;bottom:0;opacity:0}
+.bt-burst-a .bt-heart{animation:bt-burst-a 1.6s cubic-bezier(.2,.7,.3,1) both}
+.bt-burst-b .bt-heart{animation:bt-burst-b 1.6s cubic-bezier(.2,.7,.3,1) both}
+.bt-bigheart{animation:bt-pulse 5s ease-in-out infinite}
+.bt-glow{animation:bt-drift 18s ease-in-out infinite alternate}
+.bt-btn{transition:transform .2s ease,box-shadow .2s ease}
+.bt-btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(167,123,255,.6) !important}
+.bt-btn:active{transform:scale(.97)}
+.bt-back:hover{background-color:rgba(243,232,255,.14) !important}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; min-height: 100vh; overflow: hidden; background: #120A1F; color: #F3E8FF; font-family: 'Manrope', system-ui, sans-serif;">
+
+  <div class="bt-glow" aria-hidden="true" style="position: absolute; width: 64vw; height: 64vw; left: 18vw; top: -34vw; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,0.34), rgba(139,92,246,0) 65%);"></div>
+  <div class="bt-glow" aria-hidden="true" style="position: absolute; width: 50vw; height: 50vw; left: -16vw; bottom: -24vw; border-radius: 50%; background: radial-gradient(circle, rgba(229,155,234,0.2), rgba(229,155,234,0) 65%); animation-delay: -5s;"></div>
+
+  <div style="position: relative; z-index: 1; box-sizing: border-box; width: 100%; max-width: 1280px; min-height: 100vh; margin: 0 auto; padding: clamp(24px, 4vw, 56px); display: flex; flex-direction: column; gap: 32px;">
+
+    <header class="bt-rise" style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="Home.dc.html" class="bt-back" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px 0 14px; border-radius: 999px; background: rgba(243,232,255,0.08); border: 1px solid rgba(243,232,255,0.16); color: #F3E8FF; text-decoration: none; font-size: 14px; font-weight: 600;">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        <span>Nazad</span>
+      </a>
+      <span style="font-family: 'Great Vibes', cursive; font-size: 30px; line-height: 1; color: #E4D6FF;">Beba Tacije</span>
+    </header>
+
+    <main style="flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; text-align: center; padding-bottom: 6vh;">
+
+      <svg class="bt-bigheart" aria-hidden="true" viewBox="0 0 24 24" style="position: absolute; left: 50%; top: 46%; width: min(620px, 90vw); height: auto; transform-origin: 50% 50%; margin-left: calc(min(620px, 90vw) / -2); margin-top: calc(min(620px, 90vw) / -2); pointer-events: none;"><path d="M12 21s-6.7-4.35-9.33-8.36C.9 9.9 2.2 6 5.8 5.2 8 4.7 10.2 5.7 12 7.6c1.8-1.9 4-2.9 6.2-2.4 3.6.8 4.9 4.7 3.13 7.44C18.7 16.65 12 21 12 21z" fill="#8B5CF6"/></svg>
+
+      <div class="bt-rise" style="position: relative; display: flex; align-items: center; gap: 12px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #B9A8D9; animation-delay: 0.15s;">
+        <span>Razlog {{num}}</span>
+        <span aria-hidden="true" style="width: 28px; height: 1px; background: rgba(185,168,217,0.6);"></span>
+        <span>od {{total}}</span>
+      </div>
+
+      <div style="position: relative; min-height: 3.6em; display: grid; place-items: center; font-size: clamp(32px, 4vw, 60px);">
+        <p class="{{swapCls}}" aria-live="polite" style="margin: 0; max-width: 15em; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 300; font-size: 1em; line-height: 1.2; color: #F3E8FF; text-wrap: balance;">{{reason}}</p>
+      </div>
+
+      <div style="position: relative; display: flex; gap: 8px; align-items: center;" aria-hidden="true">
+        <sc-for list="{{dots}}" as="d" hint-placeholder-count="6">
+          <span style="display: block; height: 8px; border-radius: 999px; transition: width .4s ease, background-color .4s ease; width: {{d.w}}; background: {{d.bg}};"></span>
+        </sc-for>
+      </div>
+
+      <div style="position: relative;">
+        <div class="{{burstCls}}" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 50%; height: 0; pointer-events: none;">
+          <sc-for list="{{hearts}}" as="h" hint-placeholder-count="7">
+            <svg class="bt-heart" viewBox="0 0 24 24" style="width: {{h.size}}; height: {{h.size}}; margin-left: {{h.x}}; animation-delay: {{h.delay}};"><path d="M12 21s-6.7-4.35-9.33-8.36C.9 9.9 2.2 6 5.8 5.2 8 4.7 10.2 5.7 12 7.6c1.8-1.9 4-2.9 6.2-2.4 3.6.8 4.9 4.7 3.13 7.44C18.7 16.65 12 21 12 21z" fill="{{h.color}}"/></svg>
+          </sc-for>
+        </div>
+        <button type="button" class="bt-btn" onClick="{{next}}" style="position: relative; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 30px; border: none; border-radius: 999px; background: #F3E8FF; color: #2A1247; font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 0 12px 44px rgba(167,123,255,0.5);">
+          <span>Još jedan razlog</span>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M12 21s-6.7-4.35-9.33-8.36C.9 9.9 2.2 6 5.8 5.2 8 4.7 10.2 5.7 12 7.6c1.8-1.9 4-2.9 6.2-2.4 3.6.8 4.9 4.7 3.13 7.44C18.7 16.65 12 21 12 21z" fill="#8B5CF6"/></svg>
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const reasons = [
+      'Zato što se smeješ i kad pokušavaš da budeš ljuta na mene.',
+      'Zato što i najobičnija šetnja sa tobom postane najlepši deo dana.',
+      'Zato što me razumeš i kad ništa ne kažem.',
+      'Zato što si istovremeno moj mir i moja najveća avantura.',
+      'Zato što svaki moj uspeh ima smisla tek kad ga podelim sa tobom.',
+      'Zato što si ti — i to je sasvim dovoljno.'
+    ];
+    const i = (this.state && this.state.i) || 0;
+    const clicks = (this.state && this.state.clicks) || 0;
+    const pad = (n) => (n < 10 ? '0' : '') + n;
+    const dots = reasons.map((_, k) => ({
+      w: k === i ? '28px' : '8px',
+      bg: k === i ? '#E8B4F0' : 'rgba(243,232,255,0.22)'
+    }));
+    const heartSeed = [[-70, 16, 0, '#E8B4F0'], [-36, 22, 0.08, '#C9A7FF'], [-8, 14, 0.16, '#F3E8FF'], [18, 26, 0.04, '#E8B4F0'], [48, 16, 0.12, '#A77BFF'], [74, 20, 0.2, '#F3E8FF'], [-54, 12, 0.24, '#A77BFF']];
+    const hearts = heartSeed.map((h) => ({ x: h[0] + 'px', size: h[1] + 'px', delay: h[2] + 's', color: h[3] }));
+    return {
+      reason: reasons[i],
+      num: pad(i + 1),
+      total: pad(reasons.length),
+      dots,
+      hearts,
+      swapCls: i % 2 === 0 ? 'bt-swap-a' : 'bt-swap-b',
+      burstCls: clicks === 0 ? '' : (clicks % 2 === 0 ? 'bt-burst-a' : 'bt-burst-b'),
+      next: () => this.setState({ i: (i + 1) % reasons.length, clicks: clicks + 1 })
+    };
+  }
+}
+</script>
+</body>
+</html>
