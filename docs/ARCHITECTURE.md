@@ -32,6 +32,7 @@ Dependencies point downward only:
 ├── CLAUDE.md
 ├── SUMMARY.md                    written at the end of the build
 ├── electron.vite.config.ts       main, preload, renderer builds and Tailwind plugin
+├── vitest.config.ts              jsdom test environment and the @renderer alias
 ├── electron-builder.yml          Windows installer config
 ├── build/icon.ico                app and installer icon
 ├── design/                       design spec, never imported by code
@@ -55,7 +56,8 @@ Dependencies point downward only:
         └── src/
             ├── main.tsx
             ├── app/
-            │   ├── App.tsx               providers, AudioController, router outlet
+            │   ├── App.tsx               root route: shortcuts, AudioController, router outlet
+            │   ├── AudioController.tsx   hidden <audio> synced with audioStore
             │   ├── router.tsx            createHashRouter with all routes
             │   ├── paths.ts              route path constants
             │   └── RouteTransition.tsx   motion based page transition wrapper
@@ -74,7 +76,7 @@ Dependencies point downward only:
             │       ├── open-when.css
             │       └── sky.css
             ├── content/
-            │   ├── config.ts             names, relationship start, signature, splash duration
+            │   ├── config.ts             names, relationship start, signature, splash duration, music, short messages
             │   ├── reasons.ts
             │   ├── letter.ts
             │   ├── openWhen.ts
@@ -99,9 +101,10 @@ Dependencies point downward only:
             │   ├── story/
             │   ├── open-when/
             │   └── sky/
-            ├── hooks/                useNow, useInterval, useReducedMotion, useAppShortcuts
-            ├── lib/                  cn, dateSr, togetherTime, seededRandom, clamp
-            └── types/                content.ts, api.ts
+            ├── hooks/                useNow, useInterval, useReducedMotion, useTogetherTime, useAppShortcuts
+            ├── lib/                  cn, dateSr, greeting, togetherTime, seededRandom, clamp
+            ├── types/                content.ts, decor.ts
+            └── test/                 vitest setup and the renderHook helper
 ```
 
 ## Feature folder shape
