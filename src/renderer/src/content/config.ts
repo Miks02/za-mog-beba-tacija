@@ -16,7 +16,7 @@ export const config: AppConfig = {
   greetings: {
     night: 'Laku noć srećo, lepo spavajjj ! <3',
     morning: 'Dobro jutro ljubaviii!',
-    afternoon: 'Evo mi ga srećounnzttt!',
+    afternoon: 'Evo mi ga srećounnznttt!',
     evening: 'Moj život, moje sve!'
   }
 }

@@ -12,3 +12,6 @@ export const reasons = [
   { id: 'you', text: 'Zato što si ti moje sve, i to je sasvim dovoljno.' },
   { id: 'beba-tacije', text: 'Zato što BEBA TACIJE!!!' }
 ] as const satisfies ReadonlyArray<Reason>
+
+export const reasonsFinale =
+  "Ima ih mnogo više od ovih 7. Znaš da te volim više od sebe i da jedva čekam od tebe da čujem to sudbonosno 'DA!'."

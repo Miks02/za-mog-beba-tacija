@@ -1,0 +1,111 @@
+@theme {
+  --animate-story-draw: story-draw 5s 0.5s linear both;
+  --animate-story-travel: story-travel 5s 0.5s linear both;
+  --animate-story-pop: story-pop 0.7s cubic-bezier(0.34, 1.7, 0.64, 1) both;
+  --animate-story-ping: story-ping 2.4s ease-out infinite both;
+  --animate-story-card: story-card 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-story-stem: story-stem 0.5s ease-out both;
+  --animate-story-beat: story-beat 1.5s ease-in-out infinite;
+
+  --drop-shadow-story-line: 0 0 8px color-mix(in oklab, var(--color-lilac) 80%, transparent);
+  --drop-shadow-story-heart: 0 0 10px var(--color-orchid);
+  --shadow-story-start: 0 0 16px color-mix(in oklab, var(--color-orchid) 90%, transparent);
+  --shadow-story-today: 0 0 22px var(--color-orchid);
+  --shadow-story-ring: 0 0 0 2px var(--color-lilac);
+  --shadow-story-card-today: 0 0 40px color-mix(in oklab, var(--color-orchid) 18%, transparent);
+
+  @keyframes story-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes story-travel {
+    from {
+      offset-distance: 0%;
+    }
+    to {
+      offset-distance: 100%;
+    }
+  }
+
+  @keyframes story-pop {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes story-ping {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(3.2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes story-card {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.94);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes story-stem {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes story-beat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    14% {
+      transform: scale(1.25);
+    }
+    28% {
+      transform: scale(1);
+    }
+    42% {
+      transform: scale(1.12);
+    }
+    56% {
+      transform: scale(1);
+    }
+  }
+}
+
+.story-line {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+}
+
+.story-traveler {
+  offset-rotate: 0deg;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-line {
+    stroke-dashoffset: 0;
+  }
+
+  .story-traveler {
+    offset-distance: 100%;
+  }
+}

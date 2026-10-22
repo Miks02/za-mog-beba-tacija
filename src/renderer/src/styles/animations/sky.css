@@ -1,0 +1,141 @@
+@theme {
+  --animate-sky-twinkle: sky-twinkle ease-in-out infinite both;
+  --animate-sky-draw: sky-draw 4.6s 1s cubic-bezier(0.45, 0.05, 0.55, 0.95) both;
+  --animate-sky-pop: sky-pop 0.7s cubic-bezier(0.34, 1.6, 0.64, 1) both;
+  --animate-sky-late: sky-late 1.4s var(--ease-soft-out) both;
+  --animate-sky-halo: sky-halo 3s 6s ease-in-out infinite both;
+  --animate-sky-shoot: sky-shoot linear infinite both;
+  --animate-sky-wish: sky-wish 1.6s cubic-bezier(0.3, 0.6, 0.4, 1) both;
+  --animate-sky-moon: sky-moon 9s ease-in-out infinite;
+
+  --shadow-sky-star: 0 0 3px color-mix(in oklab, var(--color-orchid) 80%, transparent);
+  --shadow-sky-star-big: 0 0 8px color-mix(in oklab, var(--color-orchid) 80%, transparent);
+  --shadow-sky-shoot: 0 0 8px color-mix(in oklab, var(--color-orchid) 80%, transparent);
+  --shadow-sky-wish: 0 0 10px color-mix(in oklab, var(--color-honey) 90%, transparent);
+  --shadow-sky-moon: 18px -10px 0 0 var(--color-haze);
+  --drop-shadow-sky-moon: 0 0 22px color-mix(in oklab, var(--color-haze) 55%, transparent);
+  --drop-shadow-sky-stars: 0 0 6px var(--color-orchid);
+  --text-shadow-sky: 0 0 36px color-mix(in oklab, var(--color-amethyst) 55%, transparent);
+
+  @keyframes sky-twinkle {
+    0%,
+    100% {
+      opacity: 0.15;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes sky-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes sky-pop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.6);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes sky-late {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes sky-halo {
+    0%,
+    100% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes sky-shoot {
+    0% {
+      transform: rotate(25deg) translateX(0);
+      opacity: 0;
+    }
+    2% {
+      opacity: 1;
+    }
+    9% {
+      transform: rotate(25deg) translateX(760px);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(25deg) translateX(760px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes sky-wish {
+    0% {
+      transform: rotate(28deg) translateX(0);
+      opacity: 0;
+    }
+    8% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(28deg) translateX(900px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes sky-moon {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+.sky-backdrop {
+  background: radial-gradient(
+    ellipse at 50% 120%,
+    var(--color-sky-horizon) 0%,
+    var(--color-sky-mid) 45%,
+    var(--color-night-deep) 100%
+  );
+}
+
+.sky-line {
+  stroke-dasharray: 1700;
+  stroke-dashoffset: 1700;
+}
+
+.sky-halo {
+  filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky-line {
+    stroke-dashoffset: 0;
+  }
+
+  .sky-halo {
+    opacity: 0.45;
+  }
+}

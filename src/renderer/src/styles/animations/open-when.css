@@ -1,0 +1,63 @@
+@theme {
+  --animate-open-when-deal: open-when-deal 1s cubic-bezier(0.2, 0.8, 0.25, 1) both;
+  --animate-open-when-ray: open-when-ray 1.1s cubic-bezier(0.15, 0.7, 0.3, 1) both;
+
+  --shadow-open-when-card: 0 22px 50px color-mix(in oklab, var(--color-black) 45%, transparent);
+  --shadow-open-when-ray: 0 0 10px currentColor;
+
+  @keyframes open-when-deal {
+    0% {
+      opacity: 0;
+      transform: translateY(60px) rotate(-8deg) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes open-when-ray {
+    0% {
+      transform: translateY(0) scale(0.3);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-150px) scale(1);
+      opacity: 0;
+    }
+  }
+}
+
+.open-when-inner {
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.3, 1.35, 0.45, 1);
+}
+
+.open-when-flipped {
+  transform: rotateY(180deg);
+}
+
+.open-when-face {
+  backface-visibility: hidden;
+}
+
+.open-when-back {
+  transform: rotateY(180deg);
+}
+
+.open-when-pocket {
+  clip-path: polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%);
+}
+
+.open-when-flap {
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .open-when-inner {
+    transition: none;
+  }
+}

@@ -10,7 +10,7 @@ Content lives only in `src/renderer/src/content/` and `src/renderer/src/assets/`
 | What                                                                                                 | Where                                                  |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
 | Names, signature, relationship start date, splash duration, greetings by time of day, short messages | `content/config.ts`                                    |
-| Reasons                                                                                              | `content/reasons.ts`                                   |
+| Reasons and the closing message after the last one                                                   | `content/reasons.ts`                                   |
 | Letter paragraphs                                                                                    | `content/letter.ts`                                    |
 | Open-when labels and messages                                                                        | `content/openWhen.ts`                                  |
 | Timeline milestones                                                                                  | `content/timeline.ts`                                  |
