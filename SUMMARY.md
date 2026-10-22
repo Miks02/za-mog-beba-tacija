@@ -86,7 +86,7 @@ npm run build:win
 1. Windows prijava → aplikacija se pali sama (login item, podešen pri prvom pokretanju instalirane verzije).
 2. Main proces uzima zaključavanje jedne instance; ako je aplikacija već otvorena, novi pokušaj samo vrati fokus postojećem prozoru.
 3. Otvara se prozor bez okvira, preko celog ekrana, sa tamnom pozadinom `#120A1F`, prikazan tek kad je spreman (bez belog bljeska).
-4. `#/` Splash: bašta raste, traka se puni 6 sekundi, na 100% eksplozija srca i dugme „Uđi u svoj svet“; posle 1,5 s sam prelazi na Home.
+4. `#/` Splash: bašta raste, traka se puni 6 sekundi, na 100% eksplozija srca i dugme „Uđi u svoj svet“; na Home prelazi tek kad se klikne dugme.
 5. `#/home` Home: pozdrav po dobu dana, brojač „zajedno smo“, mandala i šest pločica.
 6. Svaka pločica vodi na svoj ekran; svaki ekran ima „Nazad“ ka Home-u:
    `#/letter` Pismo za tebe · `#/reasons` Zašto te volim · `#/gallery` Naše uspomene · `#/story` Naša priča · `#/open-when` Otvori kad… · `#/sky` Naše nebo.
@@ -167,7 +167,7 @@ Kako dodati animaciju:
 
 ## 9. Ekrani
 
-**Splash (`features/splash`).** `SplashScreen` slaže `Garden` (14 biljaka iz `gardenLayout.ts`: `Daisy`, `Tulip`, `Sprig`, `Leaf`), `FallingPetals`, `Butterflies`, `LoveTitle`, `LoadingBar`, `EnterButton`. Hook `useLoadingProgress` daje procenat sa krivom `1 − (1 − t)^2.2`, `useSplashExit` prelazi na Home 1,5 s posle 100%. Animacije: iscrtavanje stabljika, rast listova, cvetanje sa odskokom, njihanje, padanje latica, leptiri po `offset-path`, shimmer preko „Volim Te“, prstenovi i 14 srca na kraju.
+**Splash (`features/splash`).** `SplashScreen` slaže `Garden` (14 biljaka iz `gardenLayout.ts`: `Daisy`, `Tulip`, `Sprig`, `Leaf`), `FallingPetals`, `Butterflies`, `LoveTitle`, `LoadingBar`, `EnterButton`. Hook `useLoadingProgress` daje procenat sa krivom `1 − (1 − t)^2.2`, `useSplashExit` prelazi na Home na klik dugmeta. Animacije: iscrtavanje stabljika, rast listova, cvetanje sa odskokom, njihanje, padanje latica, leptiri po `offset-path`, shimmer preko „Volim Te“, prstenovi i 14 srca na kraju.
 
 **Home (`features/home`).** `HomeHeader` (sat, `MusicToggle`, X), `Greeting` (datum, pozdrav, ime, rečenica), `TogetherCounter` sa `TimeUnit`, `Mandala`, `NavGrid` sa `NavTile`. Hookovi `useNow` i `useTogetherTime`. Animacije: uzlazni ulazak elemenata, sekunde koje iskaču, odsjaj preko brojača, tri prstena mandale koji se okreću u suprotnim smerovima.
 

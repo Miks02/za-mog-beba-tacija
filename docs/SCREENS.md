@@ -19,11 +19,11 @@ Purpose: the first thing she sees when the laptop boots.
 
 - Eyebrow with small filled heart and the lowercase text "za mog beba tacija".
 - Big "Volim Te" in Great Vibes with a blur-in reveal and a continuous shimmer sweep (gradient clipped to text) plus a soft violet drop shadow on a wrapper.
-- Loading bar: track, gradient fill, beating heart riding the fill edge, status text that changes at 25 percent steps ("Zalivam cveće…", "Skupljam latice…", "Pakujem zagrljaje…", "Palim zvezdice…", "Spremno je, ljubavi."), percentage with tabular numbers. Progress is eased: `1 - (1 - t)^2.2` over `config.splashSeconds` (default 6).
+- Loading bar: track, gradient fill, beating heart riding the fill edge, status text that changes at 25 percent steps ("Zalivam cveće…", "Skupljam latice…", "Pakujem zagrljaje…", "Palim zvezdice…", "Aplikacija je spremna za mog Beba Tacija!"), percentage with tabular numbers. Progress is eased: `1 - (1 - t)^2.2` over `config.splashSeconds` (default 6).
 - Garden at the bottom: two clusters of flowers (daisies with 8 petals and a honey center, tulips) plus small sprigs in the middle. Stems draw, leaves grow from their base, heads bloom with overshoot, every plant sways forever. Exact coordinates and delays are in the design file.
 - Falling petals (14, two drift directions), twinkling sparkles (16), two drifting glow orbs.
 - Three butterflies flying along `offset-path` curves with flapping wings, starting after 3 s, 6 s and 9.5 s.
-- At 100 percent: two expanding rings and 14 hearts burst from the center of "Volim Te", the "Uđi u svoj svet" button fades in, and after `SPLASH_EXIT_DELAY_MS` (1500) the app navigates to `/home` automatically.
+- At 100 percent: two expanding rings and 14 hearts burst from the center of "Volim Te", and the "Uđi u svoj svet" button fades in. The app stays on the splash until the button is clicked, then navigates to `/home`.
 
 Components: `SplashScreen`, `Garden`, `Daisy`, `Tulip`, `Sprig`, `Leaf`, `FallingPetals`, `Butterflies`, `Butterfly`, `LoveTitle`, `LoadingBar`, `EnterButton`. Hook: `useLoadingProgress(seconds)` returning `{ percent, isDone, statusIndex }`.
 

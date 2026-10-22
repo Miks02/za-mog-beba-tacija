@@ -42,15 +42,15 @@ Stores expose actions, components never call `setState` on a store directly. Sel
 
 ## Naming
 
-| Thing                          | Convention                                                 | Example                                 |
-| ------------------------------ | ---------------------------------------------------------- | --------------------------------------- |
-| Component file                 | PascalCase                                                 | `LoadingBar.tsx`                        |
-| Hook                           | camelCase with `use`                                       | `useTogetherTime.ts`                    |
-| Store                          | camelCase with `Store`                                     | `audioStore.ts`, hook `useAudioStore`   |
-| Pure module                    | camelCase                                                  | `dateSr.ts`                             |
-| Feature folder                 | kebab-case                                                 | `open-when/`                            |
-| Constants                      | SCREAMING_SNAKE_CASE for primitives, camelCase for objects | `SPLASH_EXIT_DELAY_MS`, `collageLayout` |
-| CSS class for keyframe helpers | kebab-case with feature prefix                             | `splash-stem`, `sky-shooting-star`      |
+| Thing                          | Convention                                                 | Example                               |
+| ------------------------------ | ---------------------------------------------------------- | ------------------------------------- |
+| Component file                 | PascalCase                                                 | `LoadingBar.tsx`                      |
+| Hook                           | camelCase with `use`                                       | `useTogetherTime.ts`                  |
+| Store                          | camelCase with `Store`                                     | `audioStore.ts`, hook `useAudioStore` |
+| Pure module                    | camelCase                                                  | `dateSr.ts`                           |
+| Feature folder                 | kebab-case                                                 | `open-when/`                          |
+| Constants                      | SCREAMING_SNAKE_CASE for primitives, camelCase for objects | `PROGRESS_TICK_MS`, `collageLayout`   |
+| CSS class for keyframe helpers | kebab-case with feature prefix                             | `splash-stem`, `sky-shooting-star`    |
 
 ## Imports
 

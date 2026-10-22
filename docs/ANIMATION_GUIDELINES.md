@@ -65,7 +65,7 @@ Example of a feature file:
 ## Reduced motion
 
 - Use the `useReducedMotion` hook in JavaScript and the `motion-reduce:` variant in classes.
-- Under reduced motion: no infinite animations (petals, butterflies, twinkles, sway, spin, drift, shooting stars), entrance animations become a short fade, content that appears in sequence appears at once, and the splash goes to home without waiting for the bloom sequence.
+- Under reduced motion: no infinite animations (petals, butterflies, twinkles, sway, spin, drift, shooting stars), entrance animations become a short fade, content that appears in sequence appears at once, and the splash loading bar fills in `REDUCED_MOTION_SPLASH_SECONDS` instead of waiting for the bloom sequence.
 - Interactive outcomes stay visible: a flipped note is still flipped, a lightbox still opens.
 
 ## Motion library usage

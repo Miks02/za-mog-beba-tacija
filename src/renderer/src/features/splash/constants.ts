@@ -1,4 +1,3 @@
-export const SPLASH_EXIT_DELAY_MS = 1500
 export const PROGRESS_TICK_MS = 60
 export const PROGRESS_EASE_POWER = 2.2
 export const REDUCED_MOTION_SPLASH_SECONDS = 1.5
@@ -9,7 +8,7 @@ export const statusMessages = [
   'Skupljam latice…',
   'Pakujem zagrljaje…',
   'Palim zvezdice…',
-  'Spremno je, ljubavi.'
+  'Aplikacija je spremna za mog Beba Tacija!'
 ] as const
 
 export const EYEBROW_DELAY_S = 0.1

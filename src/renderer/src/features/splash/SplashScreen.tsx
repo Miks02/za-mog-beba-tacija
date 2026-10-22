@@ -25,7 +25,7 @@ export function SplashScreen(): React.JSX.Element {
   const isReducedMotion = useReducedMotion()
   const seconds = isReducedMotion ? REDUCED_MOTION_SPLASH_SECONDS : config.splashSeconds
   const { percent, isDone, statusIndex } = useLoadingProgress(seconds)
-  const enterHome = useSplashExit(isDone)
+  const enterHome = useSplashExit()
 
   return (
     <PageShell
