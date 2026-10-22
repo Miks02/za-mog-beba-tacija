@@ -115,7 +115,7 @@ Novi kanal se uvek dodaje na četiri mesta zajedno: `shared/ipc.ts`, `main/ipc.t
 
 | Store              | Šta drži                                                                           | Čuva se?                                                 |
 | ------------------ | ---------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `audioStore`       | `isPlaying`, `volume`, akcije `toggle`, `stop`, `setVolume`                        | Ne                                                       |
+| `audioStore`       | `isPlaying`, `volume`, akcije `play`, `toggle`, `stop`, `setVolume`                | Ne                                                       |
 | `preferencesStore` | `openedNoteIds` (poruke otvorene bar jednom), `lastReasonIndex` (poslednji razlog) | Da, `localStorage` pod ključem `beba-tacije:preferences` |
 
 Electron čuva `localStorage` u userData folderu aplikacije: na Windowsu `%APPDATA%\Beba Tacije`, na Fedori `~/.config/Beba Tacije`. Brisanjem tog foldera sve kreće ispočetka.
@@ -126,14 +126,14 @@ Sve ostalo je lokalno stanje ekrana: koverta (`useEnvelope`), lightbox (`useLigh
 
 Sav lični sadržaj je u `src/renderer/src/content/` i `src/renderer/src/assets/`. Komponente se ne diraju. Tekst je srpska latinica sa č, ć, š, ž, đ. Svaka stavka ima stabilan `id`.
 
-| Fajl          | Šta je u njemu                                                                                                                                                                                                                           |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.ts`   | Ime (`herName`), potpis (`signature`), inicijali za nebo (`initials`), datum početka (`relationshipStart`), trajanje splash-a (`splashSeconds`), muzika (`musicTrack`), kratke poruke (`messages`) i pozdravi po dobu dana (`greetings`) |
-| `reasons.ts`  | Razlozi (`reasons`) i završna poruka posle poslednjeg (`reasonsFinale`)                                                                                                                                                                  |
-| `letter.ts`   | Obraćanje, pasusi (`tone: 'plain'` običan, `'aside'` kurziv) i pozdrav na kraju                                                                                                                                                          |
-| `openWhen.ts` | Šest poruka „Otvori kad…“: `label` i `message`; potpis je „tvoj“ + `config.signature`                                                                                                                                                    |
-| `timeline.ts` | Četiri događaja na liniji i poslednja kartica „Danas · N dana kasnije“ (broj dana se računa sam)                                                                                                                                         |
-| `photos.ts`   | Devet slika: `id`, `caption`, `src`                                                                                                                                                                                                      |
+| Fajl          | Šta je u njemu                                                                                                                                                                                                                                            |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.ts`   | Ime (`herName`), potpis (`signature`), inicijali za nebo (`initials`), datum početka (`relationshipStart`), trajanje splash-a (`splashSeconds`), muzika (`musicTrack`, `musicAutoplay`), kratke poruke (`messages`) i pozdravi po dobu dana (`greetings`) |
+| `reasons.ts`  | Razlozi (`reasons`) i završna poruka posle poslednjeg (`reasonsFinale`)                                                                                                                                                                                   |
+| `letter.ts`   | Obraćanje, pasusi (`tone: 'plain'` običan, `'aside'` kurziv) i pozdrav na kraju                                                                                                                                                                           |
+| `openWhen.ts` | Šest poruka „Otvori kad…“: `label` i `message`; potpis je „tvoj“ + `config.signature`                                                                                                                                                                     |
+| `timeline.ts` | Četiri događaja na liniji i poslednja kartica „Danas · N dana kasnije“ (broj dana se računa sam)                                                                                                                                                          |
+| `photos.ts`   | Devet slika: `id`, `caption`, `src`                                                                                                                                                                                                                       |
 
 **Datum početka.** `relationshipStart` je u formatu `2025-06-09` ili `2025-06-09T01:00` (lokalno vreme). Iz njega se računaju brojač na Home-u, „zajedno smo od 9. juna 2025.“, „Od 9. juna do danas“ na pločici, broj dana na liniji i „9 · 6 · 2025“ na nebu. Datum prvog događaja u `timeline.ts` je običan tekst i menja se ručno.
 
@@ -147,7 +147,7 @@ Sav lični sadržaj je u `src/renderer/src/content/` i `src/renderer/src/assets/
 3. U `photos.ts` dodaj `import nasaSlika from '@renderer/assets/photos/nase-mesto.jpg'` i postavi `src` i `caption`.
 4. Kolaž ima tačno 9 mesta (`features/gallery/layout.ts`). Za drugačiji broj slika treba dodati ili ukloniti pozicije u `collageLayout`.
 
-**Muzika.** Ubaci fajl u `assets/music/`, uvezi ga u `config.ts` i postavi `musicTrack`. Dugme na Home-u se tada samo aktivira. Muzika kreće tek na klik.
+**Muzika.** Pesma je `assets/music/boris-rezak-gospodska-ulica.mp3` (Boris Režak, „Gospodska ulica“), uvezena u `config.ts` kao `musicTrack`. Pošto je `musicAutoplay: true`, kreće čim se aplikacija upali, ponavlja se u krug i ne prekida se pri prelasku sa ekrana na ekran. Dugme sa notom na Home-u je pauzira i ponovo pušta. Za drugu pesmu ubaci novi fajl u kebab-case obliku i promeni import; za puštanje tek na klik postavi `musicAutoplay: false`. Jačina je 60% (`DEFAULT_VOLUME` u `store/audioStore.ts`).
 
 ## 8. Sistem stilova
 
@@ -220,7 +220,7 @@ Prečice rade samo dok je aplikacija u fokusu (nisu globalne). Nema kiosk moda; 
 
 - **Nije implementirano:** dnevna poruka ili razlog koji se menja svakog dana.
 - **Nije implementirano:** godišnjice i posebni datumi koji menjaju pozdrav ili temu (rođendan, 9. jun).
-- **Nije implementirano:** više pesama i plejlista sa kontrolom jačine na ekranu.
+- **Nije implementirano:** više pesama i plejlista, kontrola jačine na ekranu.
 - **Nije implementirano:** galerija sa više od 9 slika i automatskim rasporedom kolaža.
 - **Nije implementirano:** prava fotografija uz svaki događaj na liniji „Naša priča“.
 - **Nije implementirano:** tihi mod koji preskače splash posle prvog pokretanja u danu.

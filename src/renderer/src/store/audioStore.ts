@@ -6,6 +6,7 @@ const DEFAULT_VOLUME = 0.6
 type AudioState = {
   isPlaying: boolean
   volume: number
+  play: () => void
   toggle: () => void
   stop: () => void
   setVolume: (volume: number) => void
@@ -14,6 +15,7 @@ type AudioState = {
 export const useAudioStore = create<AudioState>()((set) => ({
   isPlaying: false,
   volume: DEFAULT_VOLUME,
+  play: () => set({ isPlaying: true }),
   toggle: () => set((state) => ({ isPlaying: !state.isPlaying })),
   stop: () => set({ isPlaying: false }),
   setVolume: (volume) => set({ volume: clamp(volume, 0, 1) })

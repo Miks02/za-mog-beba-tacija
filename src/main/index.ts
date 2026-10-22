@@ -8,6 +8,8 @@ import { createMainWindow, restoreAndFocus } from './window'
 
 const APP_USER_MODEL_ID = 'com.milan.bebatacije'
 
+app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required')
+
 let mainWindow: BrowserWindow | null = null
 
 function openMainWindow(): void {

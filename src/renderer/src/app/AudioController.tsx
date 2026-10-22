@@ -7,6 +7,11 @@ export function AudioController(): React.JSX.Element | null {
   const isPlaying = useAudioStore((s) => s.isPlaying)
   const volume = useAudioStore((s) => s.volume)
   const stop = useAudioStore((s) => s.stop)
+  const play = useAudioStore((s) => s.play)
+
+  useEffect(() => {
+    if (config.musicTrack && config.musicAutoplay) play()
+  }, [play])
 
   useEffect(() => {
     const audio = audioRef.current

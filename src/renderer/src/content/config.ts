@@ -1,3 +1,4 @@
+import gospodskaUlica from '@renderer/assets/music/boris-rezak-gospodska-ulica.mp3'
 import type { AppConfig } from '@renderer/types/content'
 
 export const config: AppConfig = {
@@ -6,7 +7,8 @@ export const config: AppConfig = {
   initials: 'M & T',
   relationshipStart: '2025-06-09',
   splashSeconds: 6,
-  musicTrack: null,
+  musicTrack: gospodskaUlica,
+  musicAutoplay: true,
   messages: {
     splashEyebrow: 'za mog beba tacija',
     splashTitle: 'Volim Te',

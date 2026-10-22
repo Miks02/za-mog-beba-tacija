@@ -11,6 +11,11 @@ describe('audioStore', () => {
     expect(useAudioStore.getState().isPlaying).toBe(false)
   })
 
+  it('starts playback on play', () => {
+    useAudioStore.getState().play()
+    expect(useAudioStore.getState().isPlaying).toBe(true)
+  })
+
   it('keeps the volume between 0 and 1', () => {
     useAudioStore.getState().setVolume(3)
     expect(useAudioStore.getState().volume).toBe(1)

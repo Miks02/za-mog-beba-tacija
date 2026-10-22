@@ -64,7 +64,7 @@ Every channel uses `ipcMain.handle` and `ipcRenderer.invoke`. Adding a capabilit
 
 ## Audio
 
-Music is a bundled file in `src/renderer/src/assets/music/`. It plays only after she presses the music button, so no autoplay switch is needed. If `config.musicAutoplay` is ever set to true, add `app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required')` in `main/index.ts` before `app.whenReady()`.
+Music is a bundled file in `src/renderer/src/assets/music/`, imported in `content/config.ts` as `musicTrack`. With `config.musicAutoplay: true` the song starts as soon as the app opens and loops. `main/index.ts` appends `autoplay-policy=no-user-gesture-required` before `app.whenReady()` so Chromium allows it. The music button on Home pauses and resumes it, and `AudioController` lives above the route transition so the song keeps playing between screens.
 
 ## Packaging
 

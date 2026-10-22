@@ -7,6 +7,7 @@ export type AppConfig = {
   relationshipStart: string
   splashSeconds: number
   musicTrack: string | null
+  musicAutoplay: boolean
   messages: {
     splashEyebrow: string
     splashTitle: string
