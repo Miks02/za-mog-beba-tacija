@@ -1,36 +1,35 @@
 # Beba Tacije
 
-Full-screen desktop love app for Windows, built with Electron, React 19, TypeScript and Tailwind CSS v4. It starts with Windows, plays an animated splash and opens a home screen with six sections: a letter, reasons, a photo collage, our story timeline, open-when notes and a night sky.
+Moja srećo,
 
-## Quick start
+ako ovo čitaš, znači da si našla mali tajni ulaz u nešto što sam pravio samo za tebe. Ovaj laptop sad ima jedan deo mene u sebi. Svaki put kad ga upališ, pre svega ostalog, sačekaće te bašta koja raste i dve reči koje ti nikad neću dovoljno puta reći: Volim Te.
 
-```bash
-npm install
-npm run dev
-```
+Nisam hteo samo da ti dam laptop. Hteo sam da svaki put kad ga otvoriš znaš da neko misli na tebe. I da to neće nikad da prestane.
 
-## Commands
+## Šta te čeka unutra
 
-| Command                | What it does                              |
-| ---------------------- | ----------------------------------------- |
-| `npm run dev`          | Start with hot reload                     |
-| `npm run typecheck`    | TypeScript for main, preload and renderer |
-| `npm run lint`         | ESLint                                    |
-| `npm run format`       | Prettier with the Tailwind class sorter   |
-| `npm run test`         | Vitest                                    |
-| `npm run build`        | Typecheck and production build            |
-| `npm run build:unpack` | Unpacked app in `dist/` for local testing |
-| `npm run build:win`    | Windows NSIS installer in `dist/`         |
-| `npm run build:linux`  | Linux AppImage in `dist/`                 |
+**Pismo za tebe**
+Koverta sa pečatom. Klikni na srce i pročitaj šta sam ti napisao. Možeš da ga vratiš u kovertu i otvoriš opet kad god poželiš.
 
-## Documentation
+**Zašto te volim**
+Razlozi, jedan po jedan, na svaki klik. Ima ih sedam, a znaš i sama da ih ima mnogo više.
 
-| File            | Contents                                                              |
-| --------------- | --------------------------------------------------------------------- |
-| `SUMMARY.md`    | How the finished app works, how to edit content, troubleshooting      |
-| `POKRETANJE.md` | Setup on Fedora and building the installer on Windows                 |
-| `CLAUDE.md`     | Hard rules for working on the code                                    |
-| `docs/`         | Architecture, code, style, animation, screens and Electron guidelines |
-| `design/`       | The original design spec                                              |
+**Naše uspomene**
+Naše slike, okačene kao polaroidi ispod lampica. Klikni na bilo koju i pogledaj je izbliza.
 
-Personal content lives in `src/renderer/src/content/` and `src/renderer/src/assets/`.
+**Naša priča**
+Od te prve noći, 9. juna, preko indijskog restorana i bleje u parku, tvog rođendana i našeg prvog letovanja, sve do danas. Broj dana se sam povećava. A tek smo počeli.
+
+**Otvori kad…**
+Šest malih poruka za trenutke kad ti zatrebam, a nisam pored tebe. Kad si tužna, kad ne možeš da zaspiš, kad ti treba osmeh. Otvori onu koja ti treba. Ili sve, znam te.
+
+**Naše nebo**
+Sazvežđe u obliku srca, naša slova i naš datum. Ispod istog neba smo od prve noći. I ne zaboravi da zaželiš želju.
+
+## Za kraj
+
+Hvala ti što si moja. Hvala ti za svaki osmeh, svaki razgovor do 5 ujutru i svaki dan od 9. juna naovamo. Jedva čekam sve što tek dolazi, a najviše jedno sudbonosno DA!
+
+Volim te svaki dan sve više i više! <3
+
+Tvoj Milan
