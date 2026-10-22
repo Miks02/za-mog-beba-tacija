@@ -1,19 +1,19 @@
 # Beba Tacije
 
-Full-screen desktop love app built with Electron, React 18, TypeScript (strict) and Tailwind CSS v4, scaffolded with electron-vite. It starts with Windows, plays an animated splash, then opens a home screen with six interactive sections. Development happens on Fedora Linux, the shipped build is a Windows NSIS installer.
+Full-screen desktop love app built with Electron, React 19, TypeScript (strict) and Tailwind CSS v4, scaffolded with electron-vite. It starts with Windows, plays an animated splash, then opens a home screen with six interactive sections. Development happens on Fedora Linux, the shipped build is a Windows NSIS installer.
 
 ## Read before working
 
-| Topic | File |
-|---|---|
-| Folder structure, layers, data flow | `docs/ARCHITECTURE.md` |
-| TypeScript, React, naming, state, git | `docs/CODE_GUIDELINES.md` |
-| Tailwind, tokens, typography, accessibility | `docs/STYLE_GUIDELINES.md` |
-| Keyframes, SVG motion, reduced motion | `docs/ANIMATION_GUIDELINES.md` |
-| What every screen does, component breakdown | `docs/SCREENS.md` |
-| Main process, preload, IPC, autostart, packaging | `docs/ELECTRON.md` |
-| Visual source of truth | `design/*.dc.html` |
-| How the finished app works | `SUMMARY.md` (written at the end of the build) |
+| Topic                                            | File                                           |
+| ------------------------------------------------ | ---------------------------------------------- |
+| Folder structure, layers, data flow              | `docs/ARCHITECTURE.md`                         |
+| TypeScript, React, naming, state, git            | `docs/CODE_GUIDELINES.md`                      |
+| Tailwind, tokens, typography, accessibility      | `docs/STYLE_GUIDELINES.md`                     |
+| Keyframes, SVG motion, reduced motion            | `docs/ANIMATION_GUIDELINES.md`                 |
+| What every screen does, component breakdown      | `docs/SCREENS.md`                              |
+| Main process, preload, IPC, autostart, packaging | `docs/ELECTRON.md`                             |
+| Visual source of truth                           | `design/*.dc.html`                             |
+| How the finished app works                       | `SUMMARY.md` (written at the end of the build) |
 
 ## Hard rules
 

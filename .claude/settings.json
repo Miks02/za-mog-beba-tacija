@@ -17,10 +17,6 @@
       "Bash(rg *)",
       "Bash(ls *)"
     ],
-    "deny": [
-      "Bash(git push *)",
-      "Read(./.env)",
-      "Read(./.env.*)"
-    ]
+    "deny": ["Bash(git push *)", "Read(./.env)", "Read(./.env.*)"]
   }
 }

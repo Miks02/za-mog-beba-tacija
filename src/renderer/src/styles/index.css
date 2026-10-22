@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import '@fontsource/great-vibes/400.css';
+@import '@fontsource-variable/fraunces/opsz.css';
+@import '@fontsource-variable/fraunces/opsz-italic.css';
+@import '@fontsource-variable/manrope/index.css';
+@import './theme.css';
+@import './base.css';

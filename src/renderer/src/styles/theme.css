@@ -1,0 +1,98 @@
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-night: #120a1f;
+  --color-night-deep: #0b0616;
+  --color-plum-900: #2a1247;
+  --color-plum-800: #3e1d73;
+  --color-iris: #8b5cf6;
+  --color-amethyst: #a77bff;
+  --color-lilac: #c9a7ff;
+  --color-lavender: #e4d6ff;
+  --color-haze: #f3e8ff;
+  --color-orchid: #e8b4f0;
+  --color-orchid-deep: #e59bea;
+  --color-orchid-pale: #f3d9f6;
+  --color-mist: #cdbfea;
+  --color-dusk: #b9a8d9;
+  --color-honey: #ffe3a3;
+  --color-paper: #f6f0ff;
+  --color-polaroid: #fbf8ff;
+  --color-ink: #2a1640;
+  --color-ink-soft: #4a2580;
+  --color-ink-muted: #5a3d86;
+  --color-ink-caption: #3a2160;
+  --color-ink-label: #6b4e96;
+  --color-envelope-back: #5e3fa6;
+  --color-envelope-pocket: #7a56c2;
+  --color-envelope-flap: #8c68d4;
+  --color-stem: #6b53a3;
+  --color-leaf: #7e62b8;
+  --color-leaf-light: #8d71c6;
+  --color-grass: #4e3b78;
+  --color-sky-horizon: #2a1450;
+  --color-sky-mid: #160b2b;
+  --color-photo-violet: #6d4bb8;
+  --color-photo-lilac: #b79af0;
+  --color-photo-pink: #f0c6f3;
+  --color-photo-periwinkle: #a98be8;
+
+  --font-script: 'Great Vibes', 'Brush Script MT', cursive;
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-sans: 'Manrope Variable', system-ui, sans-serif;
+
+  --ease-soft-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.45, 0.64, 1);
+
+  --animate-rise: rise 1s var(--ease-soft-out) both;
+  --animate-fade-up: fade-up 1s var(--ease-soft-out) both;
+  --animate-twinkle: twinkle 3.4s ease-in-out infinite both;
+  --animate-drift: drift 18s ease-in-out infinite alternate;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.12;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes drift {
+    from {
+      transform: translate(0, 0) scale(1);
+    }
+    to {
+      transform: translate(5vw, 4vh) scale(1.12);
+    }
+  }
+}

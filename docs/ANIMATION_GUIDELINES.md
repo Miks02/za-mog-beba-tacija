@@ -4,27 +4,37 @@ Animation is the heart of this app. Port every keyframe, duration, delay and eas
 
 ## Where animations live
 
-| Kind | Location | How it is used |
-|---|---|---|
-| Reused across screens (twinkle, beat, rise, drift, fade) | `@theme` in `styles/theme.css` as `--animate-*` plus `@keyframes` | utilities like `animate-twinkle`, `animate-rise` |
-| Specific to one screen | `styles/animations/<feature>.css`, inside its own `@theme` block | utilities like `animate-splash-bloom` |
-| Properties Tailwind cannot express cleanly (`offset-path`, `transform-box`, complex `clip-path`, `backface-visibility`, 3D) | small prefixed classes in the same feature file | `className="splash-stem"` |
-| Mount, unmount and route transitions | `motion` (`AnimatePresence`, `motion.div`) | route fade, lightbox, envelope swap |
+| Kind                                                                                                                        | Location                                                          | How it is used                                   |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
+| Reused across screens (twinkle, beat, rise, drift, fade)                                                                    | `@theme` in `styles/theme.css` as `--animate-*` plus `@keyframes` | utilities like `animate-twinkle`, `animate-rise` |
+| Specific to one screen                                                                                                      | `styles/animations/<feature>.css`, inside its own `@theme` block  | utilities like `animate-splash-bloom`            |
+| Properties Tailwind cannot express cleanly (`offset-path`, `transform-box`, complex `clip-path`, `backface-visibility`, 3D) | small prefixed classes in the same feature file                   | `className="splash-stem"`                        |
+| Mount, unmount and route transitions                                                                                        | `motion` (`AnimatePresence`, `motion.div`)                        | route fade, lightbox, envelope swap              |
 
 Example of a feature file:
 
 ```css
 @theme {
-  --animate-splash-draw: splash-draw 1.7s cubic-bezier(.55,.1,.3,1) both;
-  --animate-splash-bloom: splash-bloom 1.25s cubic-bezier(.34,1.45,.64,1) both;
+  --animate-splash-draw: splash-draw 1.7s cubic-bezier(0.55, 0.1, 0.3, 1) both;
+  --animate-splash-bloom: splash-bloom 1.25s cubic-bezier(0.34, 1.45, 0.64, 1) both;
 
   @keyframes splash-draw {
-    to { stroke-dashoffset: 0; }
+    to {
+      stroke-dashoffset: 0;
+    }
   }
   @keyframes splash-bloom {
-    0% { transform: scale(0) rotate(-70deg); opacity: 0; }
-    55% { opacity: 1; }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    0% {
+      transform: scale(0) rotate(-70deg);
+      opacity: 0;
+    }
+    55% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
   }
 }
 

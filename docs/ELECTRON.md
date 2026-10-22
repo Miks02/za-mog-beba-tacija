@@ -24,13 +24,13 @@
 
 ## Keyboard shortcuts
 
-Handled in `src/main/shortcuts.ts` with `webContents.on('before-input-event')`, so they only work while the app is focused (no global shortcuts):
+F11 and Ctrl+Q are handled in `src/main/shortcuts.ts` with `webContents.on('before-input-event')`, so they only work while the app is focused (no global shortcuts). Esc is handled in the renderer by `hooks/useAppShortcuts.ts`, so an open overlay such as the gallery lightbox can consume it first (it calls `preventDefault`); otherwise the hook calls `window.api.leaveFullscreen()`.
 
-| Keys | Action |
-|---|---|
-| `Esc` | leave full screen |
-| `F11` | toggle full screen |
-| `Ctrl+Q` | quit |
+| Keys     | Action                                              |
+| -------- | --------------------------------------------------- |
+| `Esc`    | close the open overlay, otherwise leave full screen |
+| `F11`    | toggle full screen                                  |
+| `Ctrl+Q` | quit                                                |
 
 ## IPC contract
 
@@ -40,7 +40,8 @@ Handled in `src/main/shortcuts.ts` with `webContents.on('before-input-event')`, 
 export const IpcChannel = {
   Quit: 'app:quit',
   ToggleFullscreen: 'window:toggle-fullscreen',
-  GetAppVersion: 'app:get-version',
+  LeaveFullscreen: 'window:leave-fullscreen',
+  GetAppVersion: 'app:get-version'
 } as const
 ```
 
@@ -50,6 +51,7 @@ Preload exposes:
 type AppApi = {
   quit: () => Promise<void>
   toggleFullscreen: () => Promise<boolean>
+  leaveFullscreen: () => Promise<void>
   getAppVersion: () => Promise<string>
 }
 ```

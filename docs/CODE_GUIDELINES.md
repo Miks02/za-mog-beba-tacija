@@ -31,26 +31,26 @@
 
 ## State
 
-| Kind | Where |
-|---|---|
-| UI state of one component | `useState` in that component |
-| State of one screen | the screen or a feature hook |
-| Shared across screens | zustand store in `store/` |
-| Survives restarts | zustand with `persist`, key prefixed `beba-tacije:` |
+| Kind                      | Where                                               |
+| ------------------------- | --------------------------------------------------- |
+| UI state of one component | `useState` in that component                        |
+| State of one screen       | the screen or a feature hook                        |
+| Shared across screens     | zustand store in `store/`                           |
+| Survives restarts         | zustand with `persist`, key prefixed `beba-tacije:` |
 
 Stores expose actions, components never call `setState` on a store directly. Select narrowly: `useAudioStore((s) => s.isPlaying)`.
 
 ## Naming
 
-| Thing | Convention | Example |
-|---|---|---|
-| Component file | PascalCase | `LoadingBar.tsx` |
-| Hook | camelCase with `use` | `useTogetherTime.ts` |
-| Store | camelCase with `Store` | `audioStore.ts`, hook `useAudioStore` |
-| Pure module | camelCase | `dateSr.ts` |
-| Feature folder | kebab-case | `open-when/` |
-| Constants | SCREAMING_SNAKE_CASE for primitives, camelCase for objects | `SPLASH_EXIT_DELAY_MS`, `collageLayout` |
-| CSS class for keyframe helpers | kebab-case with feature prefix | `splash-stem`, `sky-shooting-star` |
+| Thing                          | Convention                                                 | Example                                 |
+| ------------------------------ | ---------------------------------------------------------- | --------------------------------------- |
+| Component file                 | PascalCase                                                 | `LoadingBar.tsx`                        |
+| Hook                           | camelCase with `use`                                       | `useTogetherTime.ts`                    |
+| Store                          | camelCase with `Store`                                     | `audioStore.ts`, hook `useAudioStore`   |
+| Pure module                    | camelCase                                                  | `dateSr.ts`                             |
+| Feature folder                 | kebab-case                                                 | `open-when/`                            |
+| Constants                      | SCREAMING_SNAKE_CASE for primitives, camelCase for objects | `SPLASH_EXIT_DELAY_MS`, `collageLayout` |
+| CSS class for keyframe helpers | kebab-case with feature prefix                             | `splash-stem`, `sky-shooting-star`      |
 
 ## Imports
 

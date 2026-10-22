@@ -19,7 +19,8 @@
 
 Dependencies point downward only:
 
-- `features/*` may import from `components/`, `hooks/`, `lib/`, `store/`, `content/`, `types/`, `assets/`.
+- `features/*` may import from `components/`, `hooks/`, `lib/`, `store/`, `content/`, `types/`, `assets/`, and the route constants in `app/paths.ts`.
+- `components/` never know routes: links receive their target through props such as `to` or `backTo`.
 - `components/` may import from `hooks/`, `lib/`, `types/`. Never from `features/`, `content/` or `store/`.
 - `lib/` is pure TypeScript with no React and no side effects.
 - One feature never imports from another feature. Shared pieces move to `components/` or `hooks/`.
@@ -43,7 +44,7 @@ Dependencies point downward only:
     │   ├── index.ts              app lifecycle, single instance lock, wiring
     │   ├── window.ts             createMainWindow
     │   ├── autostart.ts          login item on packaged Windows builds
-    │   ├── shortcuts.ts          Esc, F11, Ctrl+Q through before-input-event
+    │   ├── shortcuts.ts          F11, Ctrl+Q through before-input-event
     │   ├── security.ts           navigation and window-open guards
     │   └── ipc.ts                ipcMain handlers
     ├── preload/
@@ -141,19 +142,19 @@ features/gallery/
 
 ## Libraries and why
 
-| Library | Role |
-|---|---|
-| electron, electron-vite, electron-builder | runtime, build tooling, Windows installer |
-| @electron-toolkit/utils, @electron-toolkit/preload | helpers that come with the electron-vite template |
-| react, react-dom | UI |
-| react-router (v7) | `createHashRouter`, works under `file://` |
-| tailwindcss v4, @tailwindcss/vite | styling |
-| clsx, tailwind-merge | the `cn()` helper for conditional classes |
-| zustand | audio and persisted preferences |
-| motion | route transitions, lightbox and envelope presence animations only |
-| lucide-react | stroke icons (x, music, arrows, mail, image, moon, sparkles) |
-| @fontsource/great-vibes, @fontsource-variable/fraunces, @fontsource-variable/manrope | bundled fonts |
-| vitest | unit tests for `lib/` and hooks |
-| eslint, prettier, prettier-plugin-tailwindcss | quality and class ordering |
+| Library                                                                              | Role                                                              |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| electron, electron-vite, electron-builder                                            | runtime, build tooling, Windows installer                         |
+| @electron-toolkit/utils                                                              | helpers that come with the electron-vite template                 |
+| react, react-dom (v19)                                                               | UI                                                                |
+| react-router (v8)                                                                    | `createHashRouter`, works under `file://`                         |
+| tailwindcss v4, @tailwindcss/vite                                                    | styling                                                           |
+| clsx, tailwind-merge                                                                 | the `cn()` helper for conditional classes                         |
+| zustand                                                                              | audio and persisted preferences                                   |
+| motion                                                                               | route transitions, lightbox and envelope presence animations only |
+| lucide-react                                                                         | stroke icons (x, music, arrows, mail, image, moon, sparkles)      |
+| @fontsource/great-vibes, @fontsource-variable/fraunces, @fontsource-variable/manrope | bundled fonts                                                     |
+| vitest, jsdom                                                                        | unit tests for `lib/` and hooks                                   |
+| eslint, prettier, prettier-plugin-tailwindcss                                        | quality and class ordering                                        |
 
 Do not add other dependencies without asking. Specifically not needed: Redux, styled-components, CSS-in-JS, date-fns, react-query, howler, GSAP.

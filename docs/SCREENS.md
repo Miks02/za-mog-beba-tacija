@@ -2,16 +2,16 @@
 
 Each screen maps to one design file. The design file wins on visuals, copy and timing. Component names below are the expected breakdown; adjust only if a file would exceed the size limits.
 
-| Route | Design file | Feature folder |
-|---|---|---|
-| `/` | `design/Main.dc.html` | `features/splash` |
-| `/home` | `design/Home.dc.html` | `features/home` |
-| `/reasons` | `design/Reasons.dc.html` | `features/reasons` |
-| `/letter` | `design/Letter.dc.html` | `features/letter` |
-| `/gallery` | `design/Gallery.dc.html` | `features/gallery` |
-| `/story` | `design/Story.dc.html` | `features/story` |
+| Route        | Design file               | Feature folder       |
+| ------------ | ------------------------- | -------------------- |
+| `/`          | `design/Main.dc.html`     | `features/splash`    |
+| `/home`      | `design/Home.dc.html`     | `features/home`      |
+| `/reasons`   | `design/Reasons.dc.html`  | `features/reasons`   |
+| `/letter`    | `design/Letter.dc.html`   | `features/letter`    |
+| `/gallery`   | `design/Gallery.dc.html`  | `features/gallery`   |
+| `/story`     | `design/Story.dc.html`    | `features/story`     |
 | `/open-when` | `design/OpenWhen.dc.html` | `features/open-when` |
-| `/sky` | `design/Sky.dc.html` | `features/sky` |
+| `/sky`       | `design/Sky.dc.html`      | `features/sky`       |
 
 ## Splash `/`
 
