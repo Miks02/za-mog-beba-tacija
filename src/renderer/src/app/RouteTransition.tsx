@@ -15,17 +15,19 @@ export function RouteTransition(): React.JSX.Element {
   const blur = isReducedMotion ? 'none' : ROUTE_BLUR
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={location.pathname}
-        initial={{ opacity: 0, filter: blur, scale: ROUTE_ENTER_SCALE }}
-        animate={{ opacity: 1, filter: 'blur(0px)', scale: 1, transitionEnd: { filter: 'none' } }}
-        exit={{ opacity: 0, filter: blur, scale: ROUTE_EXIT_SCALE }}
-        transition={{ duration: ROUTE_TRANSITION_S, ease: easeRoute }}
-        className="min-h-dvh"
-      >
-        {outlet}
-      </motion.div>
-    </AnimatePresence>
+    <div className="min-h-dvh overflow-clip">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, filter: blur, scale: ROUTE_ENTER_SCALE }}
+          animate={{ opacity: 1, filter: 'blur(0px)', scale: 1, transitionEnd: { filter: 'none' } }}
+          exit={{ opacity: 0, filter: blur, scale: ROUTE_EXIT_SCALE }}
+          transition={{ duration: ROUTE_TRANSITION_S, ease: easeRoute }}
+          className="min-h-dvh"
+        >
+          {outlet}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   )
 }
