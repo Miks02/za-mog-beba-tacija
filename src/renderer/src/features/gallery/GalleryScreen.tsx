@@ -1,8 +1,10 @@
 import type { CSSProperties } from 'react'
 import { AnimatePresence } from 'motion/react'
+import { paths } from '@renderer/app/paths'
 import { FloatingHearts } from '@renderer/components/decor/FloatingHearts'
 import { GlowOrbs } from '@renderer/components/decor/GlowOrbs'
 import { Backdrop } from '@renderer/components/layout/Backdrop'
+import { PageHeader } from '@renderer/components/layout/PageHeader'
 import { PageShell } from '@renderer/components/layout/PageShell'
 import { photos } from '@renderer/content/photos'
 import { Collage } from './components/Collage'
@@ -28,6 +30,7 @@ export function GalleryScreen(): React.JSX.Element {
         </Backdrop>
       }
     >
+      <PageHeader backTo={paths.home} />
       <h1
         className="mt-2 mb-0 animate-rise text-center font-script text-[clamp(52px,5.6vw,84px)] leading-[1.1] font-normal text-haze [animation-delay:var(--delay)] text-shadow-title motion-reduce:animate-fade-in"
         style={{ '--delay': `${TITLE_DELAY_S}s` } as CSSProperties}

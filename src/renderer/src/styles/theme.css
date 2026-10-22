@@ -48,6 +48,7 @@
   --shadow-glow-strong: 0 16px 50px color-mix(in oklab, var(--color-amethyst) 60%, transparent);
   --shadow-honey: 0 12px 40px color-mix(in oklab, var(--color-honey) 25%, transparent);
   --shadow-honey-strong: 0 16px 50px color-mix(in oklab, var(--color-honey) 35%, transparent);
+  --shadow-glow-soft: 0 0 24px color-mix(in oklab, var(--color-iris) 22%, transparent);
   --shadow-tile-hover: 0 18px 40px color-mix(in oklab, var(--color-iris) 28%, transparent);
 
   --text-shadow-glow: 0 0 40px color-mix(in oklab, var(--color-amethyst) 50%, transparent);
