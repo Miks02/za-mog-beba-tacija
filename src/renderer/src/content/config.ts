@@ -16,9 +16,7 @@ export const config: AppConfig = {
     skyLine: 'Ispod istog neba, od prve noći.'
   },
   greetings: {
-    night: 'Laku noć srećo, lepo spavajjj ! <3',
-    morning: 'Dobro jutro ljubaviii!',
-    afternoon: 'Evo mi ga srećounnznttt!',
-    evening: 'Moj život, moje sve!'
+    beforeNoon: 'Evo mi ga srećounnznttt!',
+    afterNoon: 'Moj život, moje sve!'
   }
 }

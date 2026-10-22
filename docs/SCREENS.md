@@ -31,7 +31,7 @@ Components: `SplashScreen`, `Garden`, `Daisy`, `Tulip`, `Sprig`, `Leaf`, `Fallin
 
 - Header: small heart plus "Beba Tacije" in script, live clock `HH:mm`, music toggle (lucide `Music`, pressed state when playing), close button (lucide `X`) that calls `window.api.quit()`.
 - Eyebrow: Serbian date like "četvrtak, 22. oktobar".
-- Greeting by hour: before 5 "Laku noć", before 12 "Dobro jutro", before 18 "Dobar dan", before 22 "Dobro veče", else "Laku noć". Then "Beba Tacije" in large script.
+- Greeting by hour: before 12 `greetings.beforeNoon`, from 12 on `greetings.afterNoon` (texts in `content/config.ts`). Then "Beba Tacije" in large script.
 - Line: "Svaki put kad upališ ovaj računar, znaj da neko misli na tebe."
 - Together counter from `config.relationshipStart` (`2025-06-09T01:00`, local time): big day count, boxes for hours, minutes, seconds updating every second, the seconds digit pops on change, a soft sheen sweeps over the card. Footer text "zajedno smo od 9. juna 2025. u 01:00".
 - Mandala on the right: three counter-rotating petal rings, orbiting dots, breathing halo, beating heart in the center, entrance spin-in.
