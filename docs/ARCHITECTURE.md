@@ -160,4 +160,6 @@ features/gallery/
 | vitest, jsdom                                                                        | unit tests for `lib/` and hooks                                   |
 | eslint, prettier, prettier-plugin-tailwindcss                                        | quality and class ordering                                        |
 
+Only libraries the main process loads at runtime (`@electron-toolkit/utils`) belong in `dependencies`. Everything the renderer uses is bundled by Vite, so it goes in `devDependencies`; otherwise electron-builder copies it into the asar a second time.
+
 Do not add other dependencies without asking. Specifically not needed: Redux, styled-components, CSS-in-JS, date-fns, react-query, howler, GSAP.

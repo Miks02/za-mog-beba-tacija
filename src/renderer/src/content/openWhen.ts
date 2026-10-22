@@ -4,17 +4,17 @@ export const openWhenNotes = [
   {
     id: 'miss-me',
     label: 'ti nedostajem',
-    message: 'Zatvori oči i zamisli moj zagrljaj. Upravo sada mislim na tebe.'
+    message: 'Zatvori oči i zamisli moj zagrljaj.'
   },
   {
     id: 'sad',
     label: 'si tužna',
-    message: 'I najteži dani prođu. A ja sam uz tebe u svakom od njih.'
+    message: 'Pozovi na bejbovanje. Nakon toga više neće da bude tužno Beba Tacije.'
   },
   {
     id: 'cant-sleep',
     label: 'ne možeš da zaspiš',
-    message: 'Diši polako i zamisli da ti pričam o svom danu dok ti ne utonu oči.'
+    message: 'Pozovi me i tad. Da pričamo do 5 ujutro!'
   },
   {
     id: 'need-smile',
@@ -29,7 +29,7 @@ export const openWhenNotes = [
   {
     id: 'how-much',
     label: 'želiš da znaš koliko te volim',
-    message: 'Više nego što stane u ovaj računar. I svaki dan malo više.'
+    message: 'Mnogo više nego što može da stane u ovu aplikaciju. I svaki dan sve više.'
   }
 ] as const satisfies ReadonlyArray<OpenWhenNote>
 

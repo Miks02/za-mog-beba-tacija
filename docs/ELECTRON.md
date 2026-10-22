@@ -77,6 +77,8 @@ Music is a bundled file in `src/renderer/src/assets/music/`. It plays only after
 - `nsis`: `oneClick: true`, `perMachine: false`, `createDesktopShortcut: true`, `createStartMenuShortcut: true`, `runAfterFinish: true`, `shortcutName: Beba Tacije`
 - `artifactName: ${productName}-${version}-setup.${ext}`
 - Keep the template's Linux target for local testing (`npm run build:linux` produces an AppImage).
+- Icons: `build/icon.ico` (16 to 256 px) for Windows, `build/icon.png` and `resources/icon.png` (512 px) for Linux and the window icon.
+- No macOS target and no npm mirror config; Electron downloads from the default source.
 
 Build on Windows for the most reliable result: `npm ci` then `npm run build:win`, output in `dist/`. Building the Windows target on Linux works only with Wine installed and is a fallback.
 
