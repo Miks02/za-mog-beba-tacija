@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import { usePreferencesStore } from '@renderer/store/preferencesStore'
+import { useOpenedNotesStore } from '@renderer/store/openedNotesStore'
 
 type OpenNotes = {
   isOpen: (id: string) => boolean
   toggle: (id: string) => void
-  openedEverCount: number
+  openedCount: number
 }
 
 export function useOpenNotes(ids: ReadonlyArray<string>): OpenNotes {
   const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set())
-  const openedNoteIds = usePreferencesStore((s) => s.openedNoteIds)
-  const markNoteOpened = usePreferencesStore((s) => s.markNoteOpened)
+  const openedNoteIds = useOpenedNotesStore((s) => s.openedNoteIds)
+  const markNoteOpened = useOpenedNotesStore((s) => s.markNoteOpened)
 
   const toggle = (id: string): void => {
     const next = new Set(openIds)
@@ -26,6 +26,6 @@ export function useOpenNotes(ids: ReadonlyArray<string>): OpenNotes {
   return {
     isOpen: (id) => openIds.has(id),
     toggle,
-    openedEverCount: ids.filter((id) => openedNoteIds.includes(id)).length
+    openedCount: ids.filter((id) => openedNoteIds.includes(id)).length
   }
 }

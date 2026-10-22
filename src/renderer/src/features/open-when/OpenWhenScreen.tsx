@@ -19,7 +19,7 @@ const signature = `${openWhenSignaturePrefix} ${config.signature}`
 const delayStyle = (delayS: number): CSSProperties => ({ '--delay': `${delayS}s` }) as CSSProperties
 
 export function OpenWhenScreen(): React.JSX.Element {
-  const { isOpen, toggle, openedEverCount } = useOpenNotes(noteIds)
+  const { isOpen, toggle, openedCount } = useOpenNotes(noteIds)
 
   return (
     <PageShell
@@ -35,7 +35,7 @@ export function OpenWhenScreen(): React.JSX.Element {
         backTo={paths.home}
         right={
           <span aria-live="polite" className="text-[13px] font-semibold text-dusk tabular-nums">
-            Otvoreno {openedEverCount} od {openWhenNotes.length}
+            Otvoreno {openedCount} od {openWhenNotes.length}
           </span>
         }
       />

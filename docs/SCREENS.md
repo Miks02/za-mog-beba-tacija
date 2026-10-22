@@ -81,7 +81,7 @@ Components: `StoryScreen`, `TimelineTrack`, `TimelinePath`, `TravelingHeart`, `M
 
 - Title "Otvori kad…", subtitle "Za svaki trenutak kad ti zatreba malo mene.", counter "Otvoreno n od 6".
 - Six cards dealt in. The front is an envelope with flap, pocket, pulsing seal, "OTVORI KAD" and the label. Clicking flips the card in 3D with a springy easing to reveal the message on paper, signed "tvoj Milan", with a sparkle burst. Clicking again flips back.
-- `aria-pressed` reflects the flipped state. Notes that were opened at least once are remembered in `preferencesStore`.
+- `aria-pressed` reflects the flipped state. Notes opened at least once are counted in `openedNotesStore`, which lives only in memory, so the counter starts from 0 every time the app launches.
 - Messages come from `content/openWhen.ts` and are drafts the user may rewrite.
 
 Components: `OpenWhenScreen`, `NoteCard`, `NoteFront`, `NoteBack`, `SparkleBurst`.

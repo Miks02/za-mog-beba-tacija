@@ -87,7 +87,8 @@ Dependencies point downward only:
             │   └── music/
             ├── store/
             │   ├── audioStore.ts         isPlaying, volume, toggle
-            │   └── preferencesStore.ts   persisted: opened notes, last reason index
+            │   ├── openedNotesStore.ts   in memory: notes opened since launch
+            │   └── preferencesStore.ts   persisted: last reason index
             ├── components/
             │   ├── layout/               PageShell, PageHeader, Backdrop
             │   ├── ui/                   IconButton, PillButton, BackLink, NavTile
