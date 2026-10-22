@@ -1,6 +1,7 @@
 @theme {
   --animate-letter-float: letter-float 5s ease-in-out infinite;
   --animate-letter-flap-open: letter-flap-open 0.85s cubic-bezier(0.6, 0.05, 0.3, 1) both;
+  --animate-letter-flap-close: letter-flap-close 0.85s cubic-bezier(0.7, 0, 0.4, 0.95) both;
   --animate-letter-line: letter-line 0.9s var(--ease-soft-out) both;
   --animate-letter-seal: letter-seal 2.2s ease-in-out infinite;
 
@@ -25,6 +26,15 @@
     }
     to {
       transform: rotateX(178deg);
+    }
+  }
+
+  @keyframes letter-flap-close {
+    from {
+      transform: rotateX(178deg);
+    }
+    to {
+      transform: rotateX(0deg);
     }
   }
 

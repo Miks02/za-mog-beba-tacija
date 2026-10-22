@@ -52,10 +52,10 @@ Components: `ReasonsScreen`, `ReasonQuote`, `ProgressDots`, `NextReasonButton`, 
 
 - Closed state: floating envelope with back, letter peek, pocket, flap and a pulsing wax seal button with a heart (`aria-label="Otvori pismo"`). Text on the pocket "za Beba Tacije", hint below "Klikni na pečat".
 - Opening: the flap rotates open in 3D, the envelope sinks and fades, then the letter card rises with a slight tilt and its lines fade in one by one.
-- Letter: "Draga moja Beba Tacije," then paragraphs from `content/letter.ts`, sign-off "Zauvek tvoj," and the signature from `config.signature`, plus a small pressed flower in the corner. Button "Vrati pismo u kovertu" returns to the closed state.
+- Letter: "Draga moja Beba Tacije," then paragraphs from `content/letter.ts`, sign-off "Zauvek tvoj," and the signature from `config.signature`, plus a small pressed flower in the corner. Button "Vrati pismo u kovertu" plays the opening in reverse: the letter sinks and fades, the envelope rises back, the flap folds shut and the seal returns.
 - The letter body is a placeholder for the user to write. Keep the bracketed placeholder text until the user provides the real letter.
 
-Components: `LetterScreen`, `Envelope`, `WaxSeal`, `LetterCard`, `PressedFlower`. Hook: `useEnvelope()` with states `closed | opening | open`.
+Components: `LetterScreen`, `Envelope`, `WaxSeal`, `LetterCard`, `PressedFlower`. Hook: `useEnvelope()` with states `closed | opening | open | closing`.
 
 ## Gallery `/gallery`
 

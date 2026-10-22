@@ -4,6 +4,7 @@ import { Backdrop } from '@renderer/components/layout/Backdrop'
 import { PageHeader } from '@renderer/components/layout/PageHeader'
 import { PageShell } from '@renderer/components/layout/PageShell'
 import { ScriptLabel } from '@renderer/components/ui/ScriptLabel'
+import { AnimatePresence } from 'motion/react'
 import { config } from '@renderer/content/config'
 import { Envelope } from './components/Envelope'
 import { LetterCard } from './components/LetterCard'
@@ -26,13 +27,11 @@ export function LetterScreen(): React.JSX.Element {
       <main className="grid flex-1 place-items-center pt-2 pb-6">
         <div className="grid w-full place-items-center">
           {phase !== 'open' && (
-            <Envelope
-              isOpening={phase === 'opening'}
-              recipient={`za ${config.herName}`}
-              onOpen={open}
-            />
+            <Envelope phase={phase} recipient={`za ${config.herName}`} onOpen={open} />
           )}
-          {phase !== 'closed' && <LetterCard onClose={close} />}
+          <AnimatePresence>
+            {(phase === 'opening' || phase === 'open') && <LetterCard onClose={close} />}
+          </AnimatePresence>
         </div>
       </main>
     </PageShell>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
-import { ENVELOPE_SWAP_MS } from '../constants'
+import { ENVELOPE_RETURN_MS, ENVELOPE_SWAP_MS } from '../constants'
 
-export type EnvelopePhase = 'closed' | 'opening' | 'open'
+export type EnvelopePhase = 'closed' | 'opening' | 'open' | 'closing'
 
 type Envelope = {
   phase: EnvelopePhase
@@ -9,16 +9,27 @@ type Envelope = {
   close: () => void
 }
 
+const SETTLED_PHASE = { opening: 'open', closing: 'closed' } as const
+
+const SETTLE_DELAY_MS = { opening: ENVELOPE_SWAP_MS, closing: ENVELOPE_RETURN_MS } as const
+
 export function useEnvelope(): Envelope {
   const [phase, setPhase] = useState<EnvelopePhase>('closed')
 
   useEffect(() => {
-    if (phase !== 'opening') return
-    const id = window.setTimeout(() => setPhase('open'), ENVELOPE_SWAP_MS)
+    if (phase !== 'opening' && phase !== 'closing') return
+    const id = window.setTimeout(() => setPhase(SETTLED_PHASE[phase]), SETTLE_DELAY_MS[phase])
     return () => window.clearTimeout(id)
   }, [phase])
 
-  const open = useCallback(() => setPhase('opening'), [])
-  const close = useCallback(() => setPhase('closed'), [])
+  const open = useCallback(
+    () => setPhase((current) => (current === 'closed' ? 'opening' : current)),
+    []
+  )
+  const close = useCallback(
+    () =>
+      setPhase((current) => (current === 'open' || current === 'opening' ? 'closing' : current)),
+    []
+  )
   return { phase, open, close }
 }

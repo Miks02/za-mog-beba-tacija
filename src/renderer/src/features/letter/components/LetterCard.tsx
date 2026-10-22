@@ -7,7 +7,9 @@ import { cn } from '@renderer/lib/cn'
 import {
   LETTER_ENTER_DELAY_S,
   LETTER_ENTER_DURATION_S,
+  LETTER_EXIT_DURATION_S,
   LETTER_TILT_DEG,
+  easeEnvelopeOut,
   easeLetterIn
 } from '../constants'
 import { lineDelaysFor } from '../lineDelays'
@@ -46,6 +48,13 @@ export function LetterCard({ onClose }: LetterCardProps): React.JSX.Element {
           duration: LETTER_ENTER_DURATION_S,
           times: [0, 0.6, 1]
         }
+      }}
+      exit={{
+        opacity: 0,
+        y: 120,
+        scale: 0.86,
+        rotate: -3,
+        transition: { duration: LETTER_EXIT_DURATION_S, ease: easeEnvelopeOut }
       }}
       className="relative col-start-1 row-start-1 flex w-[min(660px,92vw)] flex-col gap-[22px] rounded-lg bg-paper px-[clamp(28px,5vw,64px)] pt-[clamp(32px,5vw,60px)] pb-[clamp(28px,4vw,44px)] text-ink shadow-letter outline-none"
     >

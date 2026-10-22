@@ -14,7 +14,7 @@ export function WaxSeal({ onOpen }: WaxSealProps): React.JSX.Element {
         type="button"
         aria-label="Otvori pismo"
         onClick={onOpen}
-        className="relative grid size-full place-items-center rounded-full border-2 border-lilac bg-plum-800 p-0"
+        className="relative grid size-full animate-fade-in place-items-center rounded-full border-2 border-lilac bg-plum-800 p-0"
       >
         <HeartIcon className="size-[30px] fill-haze" />
       </button>
