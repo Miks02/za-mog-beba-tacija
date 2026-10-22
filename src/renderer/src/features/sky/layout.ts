@@ -23,11 +23,3 @@ export const shootingStars = [
   { id: 'b', topPct: 4, leftPct: 48, durationS: 13, delayS: 6 },
   { id: 'c', topPct: 22, leftPct: 22, durationS: 11, delayS: 9.5 }
 ] as const
-
-export const wishStreaks = [
-  { id: 'a', topPct: 10, leftPct: 4, delayS: 0 },
-  { id: 'b', topPct: 4, leftPct: 30, delayS: 0.18 },
-  { id: 'c', topPct: 16, leftPct: 52, delayS: 0.32 },
-  { id: 'd', topPct: 2, leftPct: 66, delayS: 0.45 },
-  { id: 'e', topPct: 26, leftPct: 14, delayS: 0.6 }
-] as const
